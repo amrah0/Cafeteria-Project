@@ -1,0 +1,22 @@
+/* .user {
+  position: absolute;
+  right: 0;
+  padding-right: 10px;
+} */
+/* .links {
+  background-color: rgb(25, 177, 43);
+  padding: 10px;
+} */
+
+.table-scrollable {
+  max-height: 300px; /* Set the maximum height for the scrollable area */
+  overflow-y: auto; /* Enable vertical scrolling */
+  display: block;
+}
+
+.table-scrollable thead {
+  position: sticky;
+  top: 0;
+  background-color: white; /* Match the background color */
+  z-index: 1; /* Ensure the header stays above the body */
+}
