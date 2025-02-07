@@ -115,15 +115,19 @@ document.addEventListener("DOMContentLoaded", function () {
             const productsContainer = document.getElementById(`products-${orderId}`);
             productsContainer.innerHTML = "";
             productsContainer.classList.toggle("d-none");
-
+        
             if (!productsContainer.classList.contains("d-none")) {
                 if (products[orderId] && products[orderId].length > 0) {
-                    products[orderId].forEach(img => {
+                    products[orderId].forEach((img, index) => {
                         const productCard = document.createElement("div");
                         productCard.className = "card mt-2";
                         productCard.innerHTML = `
                             <div class="card-body text-center">
                                 <img src="${img}" alt="Product" class="img-fluid" width="100">
+                                <!-- Circle with price below the image -->
+                                <div class="price-circle">
+                                    <p class="price">Price: $${(index + 1) * 50}</p> <!-- Example price, you can adjust this -->
+                                </div>
                             </div>
                         `;
                         productsContainer.appendChild(productCard);
