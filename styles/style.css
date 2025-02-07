@@ -1,0 +1,50 @@
+
+/* checkspage */
+.container {
+    max-width: 900px;
+}
+
+#icon{
+    --bs-text-opacity: 1;
+    color:#BE2C32 !important;
+}
+
+#filterbox{
+background-color: #212529;
+padding: 20px;
+border-radius: 8px;
+color: rgb(255, 255, 255);
+}
+
+.table {
+    margin-top: 20px;
+}
+
+th, td {
+    text-align: center;
+}
+
+.d-none {
+    display: none;
+}
+
+
+/* checkstest */
+.card {
+    border-radius: 10px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card-body {
+    text-align: center;
+}
+
+.card-img-top {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
