@@ -10,7 +10,7 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../../styles/userorders.css" />
     <script
       src="https://kit.fontawesome.com/ff0d0c2aec.js"
       crossorigin="anonymous"
@@ -20,7 +20,6 @@
     <div class="container">
       <nav class="navbar bg-body-tertiary">
         <div class="container-fluid">
-          <!-- Left-aligned buttons -->
 
           <div class="d-flex">
             <a href="" class="btn btn-outline-success me-2"
@@ -31,7 +30,6 @@
             >
           </div>
 
-          <!-- Right-aligned dropdown -->
           <div class="dropdown ms-auto">
             <a
               href=""
@@ -87,7 +85,6 @@
         </div>
       </form>
 
-      <!-- Orders Table -->
       <div class="row m-2">
         <div class="col-12 table-responsive">
           <table class="table table-striped table-hover table-bordered">
@@ -135,7 +132,6 @@
         </div>
       </div>
 
-      <!-- Hidden Cards Section -->
       <div class="row m-2" id="Element" style="display: none">
         <div class="col-md-3 mb-3">
           <div class="card">
@@ -216,6 +212,6 @@
       crossorigin="anonymous"
     ></script>
 
-    <script src="../js/script.js"></script>
+    <script src="../../scripts/userorders.js"></script>
   </body>
 </html>
