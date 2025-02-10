@@ -1,0 +1,33 @@
+form {
+    max-width: 100 vh;
+    margin: 0 auto;
+}
+
+.btn-outline-primary {
+    border-color: #007bff;
+    color: #007bff;
+}
+
+.btn-outline-primary:hover {
+    background: #007bff;
+    color: white;
+}
+
+.btn-success {
+    background: #28a745;
+    border: none;
+}
+.text-primary {
+    --bs-text-opacity: 1;
+    color:#BE2C32 !important;
+}
+
+.btn-danger {
+    background:#BE2C32;
+    border: none;
+
+}
+
+/* .navbar {
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}  */
