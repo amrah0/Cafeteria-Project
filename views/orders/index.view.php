@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Orders</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../orders/assets/order.css">
+    <link rel="stylesheet" href="/styles/order.css">
 
  
 </head>
@@ -37,22 +37,22 @@
             
             <div class="d-flex justify-content-around flex-wrap gap-3">
                 <div class="product-card">
-                    <img src="../orders/assets/images/juice.jpeg" alt="" width="80">
+                    <img src="/Images/juice.jpeg" alt="" width="80">
                     <div class="price-badge">8 LE</div>
                     <p>juice</p>
                 </div>
                 <div class="product-card">
-                    <img src="../orders/assets/images/hot-chocolate.jpg" alt="" width="80">
+                    <img src="/Images/hot-chocolate.jpg" alt="" width="80">
                     <div class="price-badge">6 LE</div>
                     <p>Coffee</p>
                 </div>
                 <div class="product-card">
-                    <img src="../orders/assets/images/juice.jpeg" alt="" width="80">
+                    <img src="/Images/juice.jpeg" alt="" width="80">
                     <div class="price-badge">8 LE</div>
                     <p>juice</p>
                 </div>
                 <div class="product-card">
-                    <img src="../orders/assets/images/OIP.jpeg" alt="" width="80">
+                    <img src="/Images/OIP.jpeg" alt="" width="80">
                     <div class="price-badge">10 LE</div>
                     <p>tea</p>
                 </div>
@@ -87,22 +87,22 @@
             
             <div class="d-flex justify-content-around flex-wrap gap-3">
                 <div class="product-card">
-                    <img src="../orders/assets/images/OIP.jpeg" alt="" width="80">
+                    <img src="/Images/OIP.jpeg" alt="" width="80">
                     <div class="price-badge">5 LE</div>
                     <p>Tea</p>
                 </div>
                 <div class="product-card">
-                    <img src="../orders/assets/images/juice.jpeg" alt="" width="80">
+                    <img src="/Images/juice.jpeg" alt="" width="80">
                     <div class="price-badge">8 LE</div>
                     <p>juice</p>
                 </div>
                 <div class="product-card">
-                    <img src="../orders/assets/images/hot-chocolate.jpg" alt="" width="80">
+                    <img src="/Images/hot-chocolate.jpg" alt="" width="80">
                     <div class="price-badge">8 LE</div>
                     <p>Nescafe</p>
                 </div>
                 <div class="product-card">
-                    <img src="../orders/assets/images/hot-chocolate.jpg" alt="" width="80">
+                    <img src="/Images/hot-chocolate.jpg" alt="" width="80">
                     <div class="price-badge">10 LE</div>
                     <p>hot-chocolate</p>
                 </div>

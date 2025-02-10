@@ -11,7 +11,7 @@ function saveCategory(event) {
     categories.push(categoryName);
     localStorage.setItem("categories", JSON.stringify(categories));
 
-    window.location.href = "../html/addproduct.html"; 
+    window.location.href = "/views/products/create.view.php"; 
 }
 
 

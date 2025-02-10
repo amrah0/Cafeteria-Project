@@ -9,7 +9,7 @@
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
 
-    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="/styles/add_product.css">
 </head>
 <body>
 
@@ -49,7 +49,7 @@
                         <option value="cold-drinks">Cold Drinks</option>
                         <option value="snacks">Snacks</option>
                     </select>
-                    <a href="../html/add-category.html" class="btn btn-outline-primary">+ Add Category</a>
+                    <a href="/views/categories/create.view.php" class="btn btn-outline-primary">+ Add Category</a>
                     <span class="error-message text-danger"></span>
 
                 </div>
@@ -73,8 +73,8 @@
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- <script src="../scripts/script.js"></script>  -->
-    <script src="../scripts/validation.js"></script>
+    <script src="/scripts/category.js"></script> 
+    <script src="/scripts/validation.js"></script>
 
 
 
