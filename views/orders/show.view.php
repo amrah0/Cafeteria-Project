@@ -137,7 +137,7 @@
           <div class="card">
             <img
               class="card-img-top"
-              src="../images/tea.avif"
+              src="../../Images/tea.avif"
               alt="Card image cap"
             />
             <div
@@ -153,7 +153,7 @@
           <div class="card">
             <img
               class="card-img-top"
-              src="../images/tea.avif"
+              src="../../Images/tea.avif"
               alt="Card image cap"
             />
             <div
@@ -169,7 +169,7 @@
           <div class="card">
             <img
               class="card-img-top"
-              src="../images/tea.avif"
+              src="../../Images/tea.avif"
               alt="Card image cap"
             />
             <div
@@ -185,7 +185,7 @@
           <div class="card">
             <img
               class="card-img-top"
-              src="../images/tea.avif"
+              src="../../Images/tea.avif"
               alt="Card image cap"
             />
             <div
