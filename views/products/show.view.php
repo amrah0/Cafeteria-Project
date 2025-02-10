@@ -59,7 +59,6 @@
 
      
        
-      </form>
 
       <div class="row m-2">
         <div class="col-12 table-responsive">
