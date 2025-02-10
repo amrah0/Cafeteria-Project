@@ -20,7 +20,6 @@
     <div class="container">
       <nav class="navbar bg-body-tertiary">
         <div class="container-fluid">
-          <!-- Left-aligned buttons -->
 
           
           <div class="d-flex">
@@ -31,7 +30,6 @@
             <a href="" class="btn btn-outline-success me-2"><i class="fa-solid fa-money-check-dollar"></i> Checks</a>
           </div>
 
-          <!-- Right-aligned dropdown -->
           <div class="dropdown ms-auto">
             <a
               href=""
