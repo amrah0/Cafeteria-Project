@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Orders</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../styles/order.css">
+    <link rel="stylesheet" href="../orders/assets/order.css">
 
  
 </head>
@@ -37,28 +37,28 @@
             
             <div class="d-flex justify-content-around flex-wrap gap-3">
                 <div class="product-card">
-                    <img src="../images/hot-chocolate.jpg" alt="" width="80">
-                    <div class="price-badge">5 LE</div>
-                    <p>Tea</p>
+                    <img src="../orders/assets/images/juice.jpeg" alt="" width="80">
+                    <div class="price-badge">8 LE</div>
+                    <p>juice</p>
                 </div>
                 <div class="product-card">
-                    <img src="../images/hot-chocolate.jpg" alt="" width="80">
+                    <img src="../orders/assets/images/hot-chocolate.jpg" alt="" width="80">
                     <div class="price-badge">6 LE</div>
                     <p>Coffee</p>
                 </div>
                 <div class="product-card">
-                    <img src="../images/juice.jpeg" alt="" width="80">
+                    <img src="../orders/assets/images/juice.jpeg" alt="" width="80">
                     <div class="price-badge">8 LE</div>
-                    <p>Nescafe</p>
+                    <p>juice</p>
                 </div>
                 <div class="product-card">
-                    <img src="../images/hot-chocolate.jpg" alt="" width="80">
+                    <img src="../orders/assets/images/OIP.jpeg" alt="" width="80">
                     <div class="price-badge">10 LE</div>
-                    <p>Hot-Chocolate</p>
+                    <p>tea</p>
                 </div>
             </div>
             <div class="text-end mt-3">
-                <h5><strong>Total: 34 LE</strong></h5>
+                <h5><strong>Total: 37 LE</strong></h5>
             </div>
         </div>
         
@@ -87,24 +87,24 @@
             
             <div class="d-flex justify-content-around flex-wrap gap-3">
                 <div class="product-card">
-                    <img src="../images/OIP.jpeg" alt="" width="80">
+                    <img src="../orders/assets/images/OIP.jpeg" alt="" width="80">
                     <div class="price-badge">5 LE</div>
                     <p>Tea</p>
                 </div>
                 <div class="product-card">
-                    <img src="../images/juice.jpeg" alt="" width="80">
-                    <div class="price-badge">6 LE</div>
-                    <p>Coffee</p>
+                    <img src="../orders/assets/images/juice.jpeg" alt="" width="80">
+                    <div class="price-badge">8 LE</div>
+                    <p>juice</p>
                 </div>
                 <div class="product-card">
-                    <img src="../images/hot-chocolate.jpg" alt="" width="80">
+                    <img src="../orders/assets/images/hot-chocolate.jpg" alt="" width="80">
                     <div class="price-badge">8 LE</div>
                     <p>Nescafe</p>
                 </div>
                 <div class="product-card">
-                    <img src="../images/cold-drink.jpg" alt="" width="80">
+                    <img src="../orders/assets/images/hot-chocolate.jpg" alt="" width="80">
                     <div class="price-badge">10 LE</div>
-                    <p>Cola</p>
+                    <p>hot-chocolate</p>
                 </div>
             </div>
             <div class="text-end mt-3">
