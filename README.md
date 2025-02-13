@@ -13,11 +13,11 @@ FLUSH PRIVILEGES; -- Apply the changes
 ```
 + Create a new database:
 ```sql
-CREATE DATABASE php_project
+CREATE DATABASE php_cafeteria_project
 ```
 + Use the newly created database:
 ```sql
-USE php_project
+USE php_cafeteria_project
 ```
 + Copy the following code, and paste it in MySQL.
 ```sql
