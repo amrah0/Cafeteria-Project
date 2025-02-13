@@ -11,7 +11,7 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="../../styles/userorders.css" />
+    <link rel="stylesheet" href="../../../styles/userorders.css" />
     <script
       src="https://kit.fontawesome.com/ff0d0c2aec.js"
       crossorigin="anonymous"
@@ -138,7 +138,7 @@
           <div class="card">
             <img
               class="card-img-top"
-              src="../../Images/tea.avif"
+              src="../../../Images/tea.avif"
               alt="Card image cap"
             />
             <div
@@ -154,7 +154,7 @@
           <div class="card">
             <img
               class="card-img-top"
-              src="../../Images/tea.avif"
+              src="../../../Images/tea.avif"
               alt="Card image cap"
             />
             <div
@@ -170,7 +170,7 @@
           <div class="card">
             <img
               class="card-img-top"
-              src="../../Images/tea.avif"
+              src="../../../Images/tea.avif"
               alt="Card image cap"
             />
             <div
@@ -186,7 +186,7 @@
           <div class="card">
             <img
               class="card-img-top"
-              src="../../Images/tea.avif"
+              src="../../../Images/tea.avif"
               alt="Card image cap"
             />
             <div
@@ -213,6 +213,6 @@
       crossorigin="anonymous"
     ></script>
 
-    <script src="../../scripts/userorders.js"></script>
+    <script src="../../../scripts/userorders.js"></script>
   </body>
 </html>
