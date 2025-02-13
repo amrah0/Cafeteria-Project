@@ -50,7 +50,7 @@
                         <option value="cold-drinks">Cold Drinks</option>
                         <option value="snacks">Snacks</option>
                     </select>
-                    <a href="/views/categories/create.view.php" class="btn btn-outline-primary">+ Add Category</a>
+                    <a href="/views/admin/categories/create.view.php" class="btn btn-outline-primary">+ Add Category</a>
                     <span class="error-message text-danger"></span>
 
                 </div>

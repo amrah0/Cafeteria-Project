@@ -10,7 +10,7 @@
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
 
-    <link href="/styles/categorystyle.css"rel="stylesheet">
+    <link href="/styles/categorystyle.css" rel="stylesheet">
 
    
 </head>
