@@ -123,7 +123,7 @@ function saveCategory() {
     categories.push(categoryName);
     localStorage.setItem("categories", JSON.stringify(categories));
 
-    window.location.href = "/views/products/create.view.php"; 
+    window.location.href = "../views/admin/products/create.view.php";
     
     }
 

@@ -11,7 +11,7 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="../../styles/products.css" />
+    <link rel="stylesheet" href="../../../styles/products.css" />
     <script
       src="https://kit.fontawesome.com/ff0d0c2aec.js"
       crossorigin="anonymous"
@@ -78,7 +78,7 @@
                 <td>
                  5 EGP
                 </td>
-                <td><img src="../../Images/tea.avif"  alt="" style="width: 100px;height: 100px;"></td>
+                <td><img src="../../../Images/tea.avif" alt="" style="width: 100px;height: 100px;"></td>
                 <td>
                   <button class="btn btn-danger"  >Not Avaliable</button>
                   <a href="" class="btn btn-primary">Edit</a>
@@ -92,7 +92,7 @@
                 <td>
                  7 EGP
                 </td>
-                <td><img src="../../Images/nescafe.avif"  alt="" style="width: 100px;height: 100px;"></td>
+                <td><img src="../../../Images/nescafe.avif" alt="" style="width: 100px;height: 100px;"></td>
                 <td>
                   <button class="btn btn-danger"  >Not Avaliable</button>
                   <a href="" class="btn btn-primary">Edit</a>
@@ -106,7 +106,7 @@
                 <td>
                  6 EGP
                 </td>
-                <td><img src="../../Images/coffee.jpg"  alt="" style="width: 100px;height: 100px;"></td>
+                <td><img src="../../../Images/coffee.jpg" alt="" style="width: 100px;height: 100px;"></td>
                 <td>
                   <button class="btn btn-danger"  >Not Avaliable</button>
                   <a href="" class="btn btn-primary">Edit</a>
