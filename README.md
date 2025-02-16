@@ -13,7 +13,7 @@ FLUSH PRIVILEGES; -- Apply the changes
 ```
 + Create a new database:
 ```sql
-DROP DATABASE IF EXISTS php_cafeteria_project;
+DROP DATABASE IF EXISTS php_cafeteria_project; 
 CREATE DATABASE php_cafeteria_project
 ```
 + Use the newly created database:

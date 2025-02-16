@@ -1,7 +1,8 @@
 <?php
 
-namespace Core;
-
+namespace core;
+use PDO;
+use PDOException;
 class Database
 {
 
