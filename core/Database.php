@@ -18,7 +18,7 @@ class Database
         try {
             $dbName = self::DB_NAME;
             $dbHost = self::DB_HOST;
-            $pdo = new PDO("mysql:host={$dbHost};dbname={$dbName}", self::DB_USER, self::DB_PASSWORD);
+            $pdo = new PDO("mysql:host={$dbHost};dbname={$dbName};unix_socket=/var/run/mysql/mysql.sock", self::DB_USER, self::DB_PASSWORD);
             $this->pdo = $pdo;
             return $pdo;
         } catch (PDOException $e) {

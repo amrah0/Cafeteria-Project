@@ -11,7 +11,6 @@
 </head>
 <body>
 
-    
     <div class="container mt-3">
         <!-- Top Navigation Bar -->
         <div class="d-flex justify-content-between align-items-center mb-4">
@@ -25,62 +24,32 @@
         </div>
 
         <!-- User Selection Dropdown -->
-        <div class="mb-3">
-            <label for="user-select" class="form-label">Select User</label>
-            <select class="form-select" id="user-select">
-                <option value="">Choose User</option>
-                <option value="user1">User 1</option>
-                <option value="user2">User 2</option>
-                <option value="user3">User 3</option>
-            </select>
-        </div>
 
-        <!-- Search Bar -->
-        <input type="text" class="form-control" id="search-bar" placeholder="Search for a drink...">
+        <form action="" method="POST">
+            <div class="mb-3">
+                <label for="user-select" class="form-label">Select User</label>
+                <select class="form-select" id="user-select" name="user">
+                    <option selected disabled value="null">Choose User</option>
+                    <?php foreach ($users as $user) : ?>
+                        <option value="<?=$user['id']?>"><?=$user['name']?></option>
+                    <?php endforeach?>
+                </select>
+            </div>
 
-        <div class="row">
-            <!-- Drink Options -->
-            <div class="col-md-8">
-                <div class="row row-cols-4 g-3">
-                    <div class="col text-center drink-card" onclick="addDrinkToOrder('Tea', 10)">
-                        <img src="../../../Images/tea.png" class="img-fluid mb-2" alt="Tea">
-                        <p>Tea</p>
-                        <p class="text-muted">EGP 10</p>
-                    </div>
-                    <div class="col text-center drink-card" onclick="addDrinkToOrder('Coffee', 15)">
-                        <img src="../../../Images/coffeee.jpeg" class="img-fluid mb-2" alt="Coffee">
-                        <p>Coffee</p>
-                        <p class="text-muted">EGP 15</p>
-                    </div>
-                    <div class="col text-center drink-card" onclick="addDrinkToOrder('Espresso', 20)">
-                        <img src="../../../Images/espresso.jpg" class="img-fluid mb-2" alt="Espresso">
-                        <p>Espresso</p>
-                        <p class="text-muted">EGP 20</p>
-                    </div>
-                    <div class="col text-center drink-card" onclick="addDrinkToOrder('Cappuccino', 25)">
-                        <img src="../../../Images/cappuccino.png" class="img-fluid mb-2" alt="Cappuccino">
-                        <p>Cappuccino</p>
-                        <p class="text-muted">EGP 25</p>
-                    </div>
-                    <div class="col text-center drink-card" onclick="addDrinkToOrder('Latte', 30)">
-                        <img src="../../../Images/latte.jpg" class="img-fluid mb-2" alt="Latte">
-                        <p>Latte</p>
-                        <p class="text-muted">EGP 30</p>
-                    </div>
-                    <div class="col text-center drink-card" onclick="addDrinkToOrder('Hot Chocolate', 25)">
-                        <img src="../../../Images/Hot%20Chocolate.jpeg" class="img-fluid mb-2" alt="Hot Chocolate">
-                        <p>Hot Chocolate</p>
-                        <p class="text-muted">EGP 25</p>
-                    </div>
-                    <div class="col text-center drink-card" onclick="addDrinkToOrder('Green Tea', 12)">
-                        <img src="../Images/green-tea.png" class="img-fluid mb-2" alt="Green Tea">
-                        <p>Green Tea</p>
-                        <p class="text-muted">EGP 12</p>
-                    </div>
-                    <div class="col text-center drink-card" onclick="addDrinkToOrder('Iced Coffee', 18)">
-                        <img src="../../../Images/Iced%20Coffeejpeg.jpeg" class="img-fluid mb-2" alt="Iced Coffee">
-                        <p>Iced Coffee</p>
-                        <p class="text-muted">EGP 18</p>
+            <!-- Search Bar -->
+            <input type="text" class="form-control" id="search-bar" placeholder="Search for a drink...">
+
+            <div class="row">
+                <!-- Drink Options -->
+                <div class="col-md-8">
+                    <div class="row row-cols-4 g-3">
+                        <?php foreach ($products as $product) : ?>
+                            <div class="col text-center drink-card" onclick="addDrinkToOrder('<?=$product["name"]?>', <?=$product['price']?>)">
+                                <img src="../../../Images/<?=$product['image_url']?>" class="img-fluid mb-2" alt="Tea">
+                                <p><?=$product['name']?></p>
+                                <p class="text-muted"><?=$product['price']?></p>
+                            </div>
+                        <?php endforeach;?>
                     </div>
                 </div>
             </div>
@@ -100,10 +69,10 @@
                         <div class="mb-3">
                             <label for="room-select" class="form-label">Room</label>
                             <select class="form-select" id="room-select">
-                                <option value="">Select Room</option>
-                                <option value="101">Room 101</option>
-                                <option value="102">Room 102</option>
-                                <option value="103">Room 103</option>
+                                <option selected disabled value="null">Select Room</option>
+                                <?php foreach ($rooms as $room) : ?>
+                                    <option value="<?=$room['id']?>"><?=$room['name']?></option>
+                                <?php endforeach;?>
                             </select>
                         </div>
                         <div class="mb-3">
@@ -114,7 +83,8 @@
                     </div>
                 </div>
             </div>
-        </div>
+    </div>
+        </form>
 
         <!-- Latest Order -->
         <div class="mt-4">
