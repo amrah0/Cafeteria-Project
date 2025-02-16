@@ -2,9 +2,9 @@
 
 namespace core;
 
-use core\Middleware\Authenticated;
-use core\Middleware\Guest;
-use core\Middleware\Middleware;
+use core\middleware\Authenticated;
+use core\middleware\Guest;
+use core\middleware\Middleware;
 
 class Router{
 
@@ -59,7 +59,7 @@ class Router{
         if($route['uri'] === $uri && $route['method'] === strtoupper($method)){
               Middleware::resolve($route['middleware']);
           
-              return require base_path('Http/controllers/'.$route['controller']);
+              return require base_path('controllers/'.$route['controller']);
            }
        }
         
