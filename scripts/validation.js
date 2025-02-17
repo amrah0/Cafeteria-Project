@@ -39,13 +39,13 @@ function validateProductForm(event) {
         isValid = false;
     }
 
-    if (!category.value.trim()) {
-        showError(category, "Please select a category.");
-        isValid = false;
-    } else if (!/^[A-Za-z\s]+$/.test(category.value.trim())) {
-        showError(category, "Please enter a valid category name (letters only).");
-        isValid = false;
-    }
+    // if (!category.value.trim()) {
+    //     showError(category, "Please select a category.");
+    //     isValid = false;
+    // } else if (!/^[A-Za-z\s]+$/.test(category.value.trim())) {
+    //     showError(category, "Please enter a valid category name (letters only).");
+    //     isValid = false;
+    // }
     
     if (!image.files.length) {
         showError(image, "Please upload a product image.");
