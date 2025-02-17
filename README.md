@@ -1,5 +1,7 @@
 # Cafeteria-Project
 ITI | Cafeteria Project
+Tasks Made For This Page
+![image](https://github.com/user-attachments/assets/6891ea14-fc62-48d1-b55c-2f19c1b505c6)
 
 
 #### Database Schema:
