@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     if (!is_numeric($quantity) || (int)$quantity < 0) {
-        $errors['quantity'] = "Quantity must be a non-negative number.";
+        $errors['quantity'] = "Enter a Valid Quantity.";
     }
 
 

@@ -2,7 +2,7 @@
 use Core\Database;
 
 
-require base_path('core/database.php');
+require_once BASE_PATH . '/core/database.php';
 
 $db = new Database();
 
