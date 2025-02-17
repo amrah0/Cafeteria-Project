@@ -1,7 +1,9 @@
 <?php
 
-namespace core;
-use PDO;
+namespace Core;
+
+use Exception;
+use pdo;
 use PDOException;
 class Database
 {
@@ -25,6 +27,7 @@ class Database
             echo $e->getMessage();
         }
     }
+
 
     public function insert($table, $data)
     {
