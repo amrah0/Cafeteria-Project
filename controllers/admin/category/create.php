@@ -9,11 +9,14 @@ try {
     $categoryName = $_POST['category_name'] ?? '';
 
     // Validate category name
+    // makesure is a string && Not Empty && ignore only these character
     if (is_string($categoryName) && !empty(trim($categoryName)) && preg_match('/^[a-zA-Z\s]+$/', $categoryName)) {
         $data = ['name' => trim($categoryName)];
 
-        // Insert data into the database
+        // Insert data into the
+        // access Database Class And make a New Object Of It
         $db = new Database();
+
         $insert = $db->insert('category', $data);
 
         if ($insert) {
@@ -36,10 +39,12 @@ try {
         }
 
         // Encode errors and old data properly
+        //urlencode for spaces in the string
         $errors = urlencode(json_encode($errors));
         $old = urlencode(json_encode($old));
 
         // Redirect with error and old values
+        // redirect is a custom function stored in core/functions
         redirect(" /Cafeteria-Project/views/admin/categories/create.view.php?error={$errors}&old={$old}");
         exit;
     }
