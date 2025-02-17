@@ -48,7 +48,7 @@
                         <p class="text-muted">EGP 10</p>
                     </div>
                     <div class="col text-center drink-card" onclick="addDrinkToOrder('Coffee', 15)">
-                        <img src="../../../Images/coffee.jpeg" class="img-fluid mb-2" alt="Coffee">
+                        <img src="../../../Images/coffeee.jpeg" class="img-fluid mb-2" alt="Coffee">
                         <p>Coffee</p>
                         <p class="text-muted">EGP 15</p>
                     </div>
