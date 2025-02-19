@@ -2,7 +2,8 @@ let totalPrice = 0;
 let orders = []; // Make an array to store the order on button click
 const orderList = document.getElementById('order-list');
 
-function addDrinkToOrder(drinkName, price) {
+// Customize addDrinkToOrder function to take one additional argument that refers to product ID
+function addDrinkToOrder(drinkName, price, id) {
     const existingItem = Array.from(orderList.children).find(
         item => item.dataset.name === drinkName
     );
