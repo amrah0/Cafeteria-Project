@@ -1,4 +1,5 @@
 let totalPrice = 0;
+let orders = []; // Make an array to store the order on button click
 const orderList = document.getElementById('order-list');
 
 function addDrinkToOrder(drinkName, price) {
