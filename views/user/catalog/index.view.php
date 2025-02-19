@@ -65,9 +65,10 @@ $rooms = $db->select('room');
                             <label for="room-select" class="form-label">Room</label>
                             <select class="form-select" id="room-select">
                                 <option value="">Select Room</option>
-                                <option value="101">Room 101</option>
-                                <option value="102">Room 102</option>
-                                <option value="103">Room 103</option>
+                                <?php foreach ($rooms as $room): ?>
+                                    <option value="<?= $room['id']?>"><?=$room['name'] ?></option>
+                                <?php endforeach; ?>
+
                             </select>
                         </div>
                         <div class="mb-3">
