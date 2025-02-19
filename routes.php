@@ -2,6 +2,7 @@
 
 $router->get('/admin/catalog', '/admin/catalog/index.php');
 
+$router->post('/admin/catalog', '/admin/catalog/store.php');
 
 
 // Product Routes
@@ -14,3 +15,4 @@ $router->post('/admin/products/delete', 'admin/products/delete.php');
 
 // checks Routes
 $router->get('/admin/checks', 'admin/checks/index.php');
+
