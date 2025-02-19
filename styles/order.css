@@ -1,0 +1,7 @@
+.order-container { margin-bottom: 20px; padding: 15px; border: 1px solid #ddd; border-radius: 8px; background: #fff; }
+.order-header { background: #333; color: #fff; padding: 10px; border-radius: 5px 5px 0 0; }
+.order-items { display: flex; flex-wrap: wrap; gap: 15px; padding: 15px; }
+.order-item { text-align: center; border: 1px solid #ddd; padding: 10px; border-radius: 8px; width: 180px; }
+.order-item img { width: 100%; height: 120px; object-fit: cover; border-radius: 8px; }
+.status-processing { background: orange; color: white; padding: 5px; border-radius: 5px; }
+.status-delivered { background: green; color: white; padding: 5px; border-radius: 5px; }
