@@ -127,4 +127,14 @@ class Database
         }
     }
 
+    public function lastinsertid()
+    {
+        try {
+            return $this->pdo->lastInsertId();
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+            return false;
+        }
+    }
+
 }
