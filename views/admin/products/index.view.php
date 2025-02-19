@@ -20,7 +20,7 @@ $products = $db->select('product');
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Orders</title>
+  <title>products</title>
   <link
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
     rel="stylesheet"
@@ -40,10 +40,11 @@ $products = $db->select('product');
 
         <div class="d-flex">
           <a href="" class="btn btn-outline-success me-2"><i class="fa-solid fa-house"></i> Home</a>
-          <a href="" class="btn btn-outline-success me-2 active "><i class="fa-solid fa-store "></i> Products</a>
+          <a href="/views/admin/products/index.view.php" class="btn btn-outline-success me-2  "><i class="fa-solid fa-store "></i> Products</a>
           <a href="" class="btn btn-outline-success me-2 "><i class="fa-solid fa-user"></i> Users</a>
           <a href="" class="btn btn-outline-success me-2"><i class="fa-solid fa-cart-shopping"></i> Manual Order</a>
-          <a href="" class="btn btn-outline-success me-2"><i class="fa-solid fa-money-check-dollar"></i> Checks</a>
+          <a href="/admin/checks" class="btn btn-outline-success"> <i class="fa-solid fa-money-check-dollar"></i> Checks</a>
+        
         </div>
 
         <div class="dropdown ms-auto">

@@ -12,3 +12,5 @@ $router->post('/admin/products/toggle', 'admin/products/toggleAvailability.php')
 $router->post('/admin/products/delete', 'admin/products/delete.php');
 
 
+// checks Routes
+$router->get('/admin/checks', 'admin/checks/index.php');
