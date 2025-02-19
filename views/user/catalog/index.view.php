@@ -75,7 +75,10 @@ $rooms = $db->select('room');
                             <label for="order-total" class="form-label">Total Price</label>
                             <input type="text" class="form-control" id="order-total" value="EGP 0" readonly>
                         </div>
-                        <button class="btn btn-success w-100">Confirm Order</button>
+                        <div id="warning"></div>
+<!--                        <form method="post" action="/controllers/user/catalog/create.php">-->
+                        <button class="btn btn-success w-100" onclick="PlaceOrder()">Confirm Order</button>
+<!--                        </form>-->
                     </div>
                 </div>
             </div>
