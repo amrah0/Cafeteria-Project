@@ -137,4 +137,9 @@ class Database
         }
     }
 
+public function fetchAll($query, $params = []) {
+    $stmt = $this->pdo->prepare($query);
+    $stmt->execute($params);
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
 }
