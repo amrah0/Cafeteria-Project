@@ -33,6 +33,10 @@ function addDrinkToOrder(drinkName, price, id) {
 
         listItem.appendChild(priceBadge);
         orderList.appendChild(listItem);
+
+        // Customize addDrinkToOrder function to take one additional argument that refers to product ID
+        orders.push({name: drinkName, price: price, quantity: 1, totalPrice: price, id: id});
+        console.log(orders);
     }
 
     totalPrice += price;
