@@ -1,7 +1,6 @@
 <?php
 
 use core\Database;
-
 $db = new Database();
 $users = $db->select('User');
 $products = $db->select('Product');

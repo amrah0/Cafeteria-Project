@@ -39,7 +39,8 @@ class Database
                 $stmt->bindValue(":{$column}", $value);
             }
 
-            return $stmt->execute();
+            $stmt->execute();
+            return $this->pdo->lastInsertId();
         } catch (PDOException $e) {
             echo $e->getMessage();
             return false;
