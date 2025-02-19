@@ -15,6 +15,12 @@ function addDrinkToOrder(drinkName, price, id) {
 
         const priceBadge = existingItem.querySelector('.badge');
         priceBadge.textContent = `EGP ${newQuantity * price}`;
+
+        // Append or update the orders array, save items & total price
+        const order = orders.find(order => order.name === drinkName);
+        order.quantity = newQuantity;
+        order.totalPrice = newQuantity * price;
+
     } else {
         const listItem = document.createElement('li');
         listItem.className = 'list-group-item d-flex justify-content-between align-items-center';
