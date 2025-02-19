@@ -1,4 +1,12 @@
 <!--Screen 2-->
+<?php
+require_once __DIR__ . '/../../../vendor/autoload.php';
+
+use core\Database;
+$db = new Database();
+$products = $db->select('product');
+$rooms = $db->select('room');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
