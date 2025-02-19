@@ -35,46 +35,15 @@ $rooms = $db->select('room');
             <!-- Drink Options -->
             <div class="col-md-8">
                 <div class="row row-cols-4 g-3">
-                    <div class="col text-center drink-card" onclick="addDrinkToOrder('Tea', 10)">
-                        <img src="../../../Images/tea.png" class="img-fluid mb-2" alt="Tea">
-                        <p>Tea</p>
-                        <p class="text-muted">EGP 10</p>
-                    </div>
-                    <div class="col text-center drink-card" onclick="addDrinkToOrder('Coffee', 15)">
-                        <img src="../../../Images/coffeee.jpeg" class="img-fluid mb-2" alt="Coffee">
-                        <p>Coffee</p>
-                        <p class="text-muted">EGP 15</p>
-                    </div>
-                    <div class="col text-center drink-card" onclick="addDrinkToOrder('Espresso', 20)">
-                        <img src="../../../Images/espresso.jpg" class="img-fluid mb-2" alt="Espresso">
-                        <p>Espresso</p>
-                        <p class="text-muted">EGP 20</p>
-                    </div>
-                    <div class="col text-center drink-card" onclick="addDrinkToOrder('Cappuccino', 25)">
-                        <img src="../../../Images/cappuccino.png" class="img-fluid mb-2" alt="Cappuccino">
-                        <p>Cappuccino</p>
-                        <p class="text-muted">EGP 25</p>
-                    </div>
-                    <div class="col text-center drink-card" onclick="addDrinkToOrder('Latte', 30)">
-                        <img src="../../../Images/latte.jpg" class="img-fluid mb-2" alt="Latte">
-                        <p>Latte</p>
-                        <p class="text-muted">EGP 30</p>
-                    </div>
-                    <div class="col text-center drink-card" onclick="addDrinkToOrder('Hot Chocolate', 25)">
-                        <img src="../../../Images/Hot%20Chocolate.jpeg" class="img-fluid mb-2" alt="Hot Chocolate">
-                        <p>Hot Chocolate</p>
-                        <p class="text-muted">EGP 25</p>
-                    </div>
-                    <div class="col text-center drink-card" onclick="addDrinkToOrder('Green Tea', 12)">
-                        <img src="../../../Images/green-tea.png" class="img-fluid mb-2" alt="Green Tea">
-                        <p>Green Tea</p>
-                        <p class="text-muted">EGP 12</p>
-                    </div>
-                    <div class="col text-center drink-card" onclick="addDrinkToOrder('Iced Coffee', 18)">
-                        <img src="../../../Images/Iced%20Coffeejpeg.jpeg" class="img-fluid mb-2" alt="Iced Coffee">
-                        <p>Iced Coffee</p>
-                        <p class="text-muted">EGP 18</p>
-                    </div>
+<!--                    // customize addDrinkToOrder function to Take One Additional Argument where refere to product ID-->
+                    <?php foreach ($products as $product): ?>
+                        <div class="col text-center drink-card" onclick="addDrinkToOrder('<?=$product['name']?>', <?= $product['price']?>,<?= $product['id']?>)">
+                            <img src="/Images/<?=$product['image_url']?>" class="img-fluid mb-2" alt="Tea">
+                            <p><?=$product['name']?></p>
+                            <p class="text-muted">EGP <?= $product['price']?></p>
+                        </div>
+                   <?php endforeach; ?>
+
                 </div>
             </div>
 
