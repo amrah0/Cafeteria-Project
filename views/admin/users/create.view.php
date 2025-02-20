@@ -24,8 +24,19 @@ if(isset($_GET['old'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>login </title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+    crossorigin="anonymous" />
+    <script
+    src="https://kit.fontawesome.com/ff0d0c2aec.js"
+    crossorigin="anonymous"></script>
+
+
 </head>
 <body>
+    
 <div class="container">
     <?php if (isset($_GET['success'])): ?>
         <div class="alert alert-success" role="alert">
@@ -40,6 +51,36 @@ if(isset($_GET['old'])){
             ?>
         </p>
     <?php endif; ?>
+    <div class="container">
+    <nav class="navbar bg-body-tertiary">
+      <div class="container-fluid">
+
+
+        <div class="d-flex">
+        <a href="/admin/catalog" class="btn btn-outline-success me-2"><i class="fa-solid fa-house"></i> Home</a>
+        <a href="/views/admin/products/index.view.php" class="btn btn-outline-success me-2  "><i class="fa-solid fa-store "></i> Products</a>
+          <a href="/views/admin/users/index.view.php" class="btn btn-outline-success me-2 "><i class="fa-solid fa-user"></i> Users</a>
+          <a href="/views/admin/orders/index.view.php" class="btn btn-outline-success me-2"><i class="fa-solid fa-cart-shopping"></i> Manual Order</a>
+          <a href="/admin/checks" class="btn btn-outline-success"> <i class="fa-solid fa-money-check-dollar"></i> Checks</a>
+        
+        </div>
+
+        <div class="dropdown ms-auto">
+          <a
+            href=""
+            class="btn btn-secondary dropdown-toggle"
+            data-bs-toggle="dropdown"
+            aria-expanded="false">
+            <i class="fa-solid fa-user-tie"></i>Admin
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li><a class="dropdown-item" href="#">Change Password</a></li>
+            <li><a class="dropdown-item" href="#">LogOut</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
     <h1>Add User  </h1>
     <form method="post" action="../../../controllers/admin/users/create.php" enctype="multipart/form-data">
         <div class="form-group">

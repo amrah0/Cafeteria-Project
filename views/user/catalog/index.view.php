@@ -36,6 +36,7 @@ foreach ($latestOrder as $order) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Drink Order Page</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
     <link href="../../../styles/homepage_s2.css" rel="stylesheet">
 
 </head>
@@ -44,15 +45,41 @@ foreach ($latestOrder as $order) {
     <input type="hidden" id="user-id" value="<?php echo $_SESSION['user_id']; ?>">
 
 
-    <div class="container mt-3">
-        <!-- Top Navigation Bar -->
-        <div class="d-flex justify-content-between align-items-center mb-4">
-            <div>
-                <button class="btn btn-outline-secondary me-2">Home</button>
-                <button class="btn btn-outline-secondary">Orders</button>
-            </div>
-           
+  
+    <div class="container">
+    <nav class="navbar bg-body-tertiary"> <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+    crossorigin="anonymous" />
+    <script
+    src="https://kit.fontawesome.com/ff0d0c2aec.js"
+    crossorigin="anonymous"></script>
+      <div class="container-fluid">
+
+
+        <div class="d-flex">
+        <a href="views/user/catalog/index.view.php" class="btn btn-outline-success me-2"><i class="fa-solid fa-house"></i> Home</a>
+      
+          <a href="/views/user/orders/index.view.php" class="btn btn-outline-success me-2"><i class="fa-solid fa-cart-shopping"></i> My Orders</a>
+        
         </div>
+
+        <div class="dropdown ms-auto">
+          <a
+            href=""
+            class="btn btn-secondary dropdown-toggle"
+            data-bs-toggle="dropdown"
+            aria-expanded="false">
+            <i class="fa-solid fa-user-tie"></i>user
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li><a class="dropdown-item" href="#">Change Password</a></li>
+            <li><a class="dropdown-item" href="#">LogOut</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
         <!-- Search Bar -->
         <input type="text" class="form-control" id="search-bar" placeholder="Search for a drink...">
@@ -132,8 +159,9 @@ foreach ($latestOrder as $order) {
                     </div>
                 <?php endforeach; ?>
             <?php else: ?>
-                <p>No recent orders yet.</p>
-            <?php endif; ?>
+ <div class="recent">
+                    <p>No recent orders yet.</p>
+                </div>            <?php endif; ?>
         </div>
     </div>
 

@@ -18,35 +18,34 @@
     ></script>
   </head>
   <body>
-    <div class="container">
-      <nav class="navbar bg-body-tertiary">
-        <div class="container-fluid">
+   
+  <div class="container">
+    <nav class="navbar bg-body-tertiary">
+      <div class="container-fluid">
 
-          <div class="d-flex">
-            <a href="" class="btn btn-outline-success me-2"
-              ><i class="fa-solid fa-house"></i> Home</a
-            >
-            <a href="" class="btn btn-outline-success me-2 active"
-              ><i class="fa-solid fa-cart-shopping"></i> My Orders</a
-            >
-          </div>
 
-          <div class="dropdown ms-auto">
-            <a
-              href=""
-              class="btn btn-secondary dropdown-toggle"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              <i class="fa-solid fa-user"></i> username
-            </a>
-            <ul class="dropdown-menu dropdown-menu-end">
-              <li><a class="dropdown-item" href="#">Change Password</a></li>
-              <li><a class="dropdown-item" href="#">LogOut</a></li>
-            </ul>
-          </div>
+        <div class="d-flex">
+        <a href="" class="btn btn-outline-success me-2"><i class="fa-solid fa-house"></i> Home</a>
+      
+          <a href="/views/user/orders/index.view.php" class="btn btn-outline-success me-2"><i class="fa-solid fa-cart-shopping"></i> My Orders</a>
+        
         </div>
-      </nav>
+
+        <div class="dropdown ms-auto">
+          <a
+            href=""
+            class="btn btn-secondary dropdown-toggle"
+            data-bs-toggle="dropdown"
+            aria-expanded="false">
+            <i class="fa-solid fa-user-tie"></i>user
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li><a class="dropdown-item" href="#">Change Password</a></li>
+            <li><a class="dropdown-item" href="#">LogOut</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
       <div class="row m-2">
         <div class="col-12">

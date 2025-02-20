@@ -26,8 +26,8 @@
         <div class="d-flex">
         <a href="/admin/catalog" class="btn btn-outline-success me-2"><i class="fa-solid fa-house"></i> Home</a>
         <a href="/views/admin/products/index.view.php" class="btn btn-outline-success me-2  "><i class="fa-solid fa-store "></i> Products</a>
-          <a href="" class="btn btn-outline-success me-2 "><i class="fa-solid fa-user"></i> Users</a>
-          <a href="" class="btn btn-outline-success me-2"><i class="fa-solid fa-cart-shopping"></i> Manual Order</a>
+          <a href="/views/admin/users/index.view.php" class="btn btn-outline-success me-2 "><i class="fa-solid fa-user"></i> Users</a>
+          <a href="/views/admin/orders/index.view.php" class="btn btn-outline-success me-2"><i class="fa-solid fa-cart-shopping"></i> Manual Order</a>
           <a href="/admin/checks" class="btn btn-outline-success"> <i class="fa-solid fa-money-check-dollar"></i> Checks</a>
         
         </div>
@@ -47,6 +47,7 @@
         </div>
       </div>
     </nav>
+
 
     <div class="container mt-4">
       <h2>Checks</h2>

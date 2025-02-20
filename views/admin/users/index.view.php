@@ -19,34 +19,35 @@
   </head>
   <body>
     <div class="container">
-      <nav class="navbar bg-body-tertiary">
-        <div class="container-fluid">
-          <!-- Left-aligned buttons -->
-          <div class="d-flex">
-            <a href="" class="btn btn-outline-success me-2"><i class="fa-solid fa-house"></i> Home</a>
-            <a href="" class="btn btn-outline-success me-2 "></i><i class="fa-solid fa-store"></i> Products</a>
-            <a href="" class="btn btn-outline-success me-2 active"><i class="fa-solid fa-user"></i> Users</a>
-            <a href="" class="btn btn-outline-success me-2"><i class="fa-solid fa-cart-shopping"></i> Manual Order</a>
-            <a href="" class="btn btn-outline-success me-2"><i class="fa-solid fa-money-check-dollar"></i> Checks</a>
-          </div>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container-fluid">
 
-          <!-- Right-aligned dropdown -->
-          <div class="dropdown ms-auto ">
-            <a
-              href=""
-              class="btn btn-secondary dropdown-toggle"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-            <i class="fa-solid fa-user-tie"></i>Admin
-            </a>
-            <ul class="dropdown-menu dropdown-menu-end">
-              <li><a class="dropdown-item" href="#">Change Password</a></li>
-              <li><a class="dropdown-item" href="#">LogOut</a></li>
-            </ul>
-          </div>
+
+        <div class="d-flex">
+        <a href="/admin/catalog" class="btn btn-outline-success me-2"><i class="fa-solid fa-house"></i> Home</a>
+        <a href="/views/admin/products/index.view.php" class="btn btn-outline-success me-2  "><i class="fa-solid fa-store "></i> Products</a>
+          <a href="/views/admin/users/index.view.php" class="btn btn-outline-success me-2 "><i class="fa-solid fa-user"></i> Users</a>
+          <a href="/views/admin/orders/index.view.php" class="btn btn-outline-success me-2"><i class="fa-solid fa-cart-shopping"></i> Manual Order</a>
+          <a href="/admin/checks" class="btn btn-outline-success"> <i class="fa-solid fa-money-check-dollar"></i> Checks</a>
+        
         </div>
-      </nav>
+
+        <div class="dropdown ms-auto">
+          <a
+            href=""
+            class="btn btn-secondary dropdown-toggle"
+            data-bs-toggle="dropdown"
+            aria-expanded="false">
+            <i class="fa-solid fa-user-tie"></i>Admin
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li><a class="dropdown-item" href="#">Change Password</a></li>
+            <li><a class="dropdown-item" href="#">LogOut</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
 
       <div class="row m-2">
         <div class="col">
