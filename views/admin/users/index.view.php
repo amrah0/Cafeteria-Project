@@ -22,6 +22,7 @@
       <nav class="navbar bg-body-tertiary">
         <div class="container-fluid">
           <!-- Left-aligned buttons -->
+<!--            --><?php //=dd($users)?>
           <div class="d-flex">
             <a href="" class="btn btn-outline-success me-2"><i class="fa-solid fa-house"></i> Home</a>
             <a href="" class="btn btn-outline-success me-2 "></i><i class="fa-solid fa-store"></i> Products</a>
@@ -70,71 +71,27 @@
                 <th>Name</th>
                 <th>Room</th>
                 <th>Image</th>
-                <th>Ext</th>
+<!--                <th>Ext</th>-->
                 <th>Action</th>
               </tr>
             </thead>
             <tbody>
-              <tr >
-                <td>Amr</td>
-                <td>
-                 109
-                </td>
-                <td><img src="" alt=""></td>
-                <td>555</td>
-                <td>
-                  
-                  <a href="" class="btn btn-primary">Edit</a>
-                  <button  class="btn btn-primary">
-                    delete
-                  </button>
-                </td>
-              </tr>
-              <tr >
-                <td>Mohamed</td>
-                <td>
-                 110
-                </td>
-                <td><img src="" alt=""></td>
-                <td>555</td>
-                <td>
-                  
-                  <a href="" class="btn btn-primary">Edit</a>
-                  <button  class="btn btn-primary">
-                    delete
-                  </button>
-                </td>
-              </tr> <tr >
-                <td>Ahella</td>
-                <td>
-                 111
-                </td>
-                <td><img src="" alt=""></td>
-                <td>555</td>
-                <td>
-                  
-                  <a href="" class="btn btn-primary">Edit</a>
-                  <button  class="btn btn-primary">
-                    delete
-                  </button>
-                </td>
-              </tr>
-              <tr >
-                <td>Manar</td>
-                <td>
-                 112
-                </td>
-                <td><img src="" alt=""></td>
-                <td>555</td>
-                <td>
-                  
-                  <a href="" class="btn btn-primary">Edit</a>
-                  <button  class="btn btn-primary">
-                    delete
-                  </button>
-                </td>
-              </tr>
-              
+            <?php foreach($users as $user):?>
+                <tr >
+                    <td><?=$user['name']?></td>
+                    <td>
+                        <?=$user['room']?>
+                    </td>
+                    <td><img src="../../../Images/<?=$user['image_url']?>" alt=""></td>
+<!--                    <td>555</td>-->
+                    <td>
+                        <a href="" class="btn btn-primary">Edit</a>
+                        <button  class="btn btn-primary">
+                            delete
+                        </button>
+                    </td>
+                </tr>
+            <?php endforeach?>
             </tbody>
           </table>
         </div>

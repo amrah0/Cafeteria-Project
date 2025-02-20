@@ -2,4 +2,7 @@
 
 use core\Database;
 
-return view('admin/users/index.view.php');
+$db = new Database();
+$users = $db->select('User');
+
+return view('admin/users/index.view.php',['users'=>$users]);
