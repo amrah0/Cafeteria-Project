@@ -1,10 +1,8 @@
 <!--Screen 1-->
 <?php
-// TODO: IMPLEMENT ERROR HANDLING, AND OLD DATA, AS IN INDEX.PHP
-session_start();
 
 if(isset($_SESSION['login'])){
-    header('Location: homepage.php');
+    header('Location: /');
 }
 
 if(isset($_GET['invalid']))
@@ -29,9 +27,9 @@ if(isset($_GET['email']))
 </head>
 <body>
 <main class="container-lg col-4">
-    <h3 class="mt-2 text-center">Log In <a href="index.php" class="btn btn-dark">Sign Up</a></h3>
+    <h3 class="mt-2 text-center">Log In</h3>
     <hr>
-    <form action="loginController.php" method="POST">
+    <form action="/login" method="POST">
         <div class="mb-3">
             <label for="email" class="form-label">Email</label>
             <input type="text" value="<?php echo $old_email ?? '' ?>" name="email" class="form-control" id="email" aria-describedby="emailHelp">
