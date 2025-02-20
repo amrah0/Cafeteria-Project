@@ -1,9 +1,9 @@
 <!--Screen 1-->
 <?php
 
-if(isset($_SESSION['login'])){
-    header('Location: /');
-}
+//if(isset($_SESSION['login'])){
+//    header('Location: #');
+//}
 
 if(isset($_GET['invalid']))
 {
