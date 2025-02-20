@@ -1,5 +1,6 @@
 <!--Screen 2-->
 <?php
+session_start();
 require_once __DIR__ . '/../../../vendor/autoload.php';
 
 use core\Database;
