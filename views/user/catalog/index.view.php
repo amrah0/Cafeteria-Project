@@ -1,4 +1,34 @@
 <!--Screen 2-->
+<?php
+session_start();
+require_once __DIR__ . '/../../../vendor/autoload.php';
+use core\Database;
+$db = new Database();
+$userId = $_SESSION['user_id'];
+//var_dump($userId);
+$products = $db->select('product');
+$rooms = $db->select('room');
+$query = "
+    SELECT `Order`.id AS order_id, `Order`.created_at, `Order`.total_price, `Order`.status, 
+           User.id AS user_id, User.name AS user_name, Room.name AS room_name
+    FROM `Order`
+    JOIN User ON `Order`.user_id = User.id
+    JOIN Room ON `Order`.room_id = Room.id
+    WHERE `Order`.user_id = ?
+    ORDER BY `Order`.created_at DESC
+    LIMIT 5";
+$latestOrder = $db->fetchAll($query, [$userId]);
+$orderItems = [];
+foreach ($latestOrder as $order) {
+    $orderId = $order['order_id'];
+    $query = "
+        SELECT Product.name, Product.price, Product.image_url, Order_Product.quantity
+        FROM Order_Product
+        JOIN Product ON Order_Product.product_id = Product.id
+        WHERE Order_Product.order_id = ?";
+    $orderItems[$orderId] = $db->fetchAll($query, [$orderId]);
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,6 +40,10 @@
 
 </head>
 <body>
+<!--    //   hidden input to store user id from session-->
+    <input type="hidden" id="user-id" value="<?php echo $_SESSION['user_id']; ?>">
+
+
     <div class="container mt-3">
         <!-- Top Navigation Bar -->
         <div class="d-flex justify-content-between align-items-center mb-4">
@@ -27,46 +61,15 @@
             <!-- Drink Options -->
             <div class="col-md-8">
                 <div class="row row-cols-4 g-3">
-                    <div class="col text-center drink-card" onclick="addDrinkToOrder('Tea', 10)">
-                        <img src="../../../Images/tea.png" class="img-fluid mb-2" alt="Tea">
-                        <p>Tea</p>
-                        <p class="text-muted">EGP 10</p>
-                    </div>
-                    <div class="col text-center drink-card" onclick="addDrinkToOrder('Coffee', 15)">
-                        <img src="../../../Images/coffeee.jpeg" class="img-fluid mb-2" alt="Coffee">
-                        <p>Coffee</p>
-                        <p class="text-muted">EGP 15</p>
-                    </div>
-                    <div class="col text-center drink-card" onclick="addDrinkToOrder('Espresso', 20)">
-                        <img src="../../../Images/espresso.jpg" class="img-fluid mb-2" alt="Espresso">
-                        <p>Espresso</p>
-                        <p class="text-muted">EGP 20</p>
-                    </div>
-                    <div class="col text-center drink-card" onclick="addDrinkToOrder('Cappuccino', 25)">
-                        <img src="../../../Images/cappuccino.png" class="img-fluid mb-2" alt="Cappuccino">
-                        <p>Cappuccino</p>
-                        <p class="text-muted">EGP 25</p>
-                    </div>
-                    <div class="col text-center drink-card" onclick="addDrinkToOrder('Latte', 30)">
-                        <img src="../../../Images/latte.jpg" class="img-fluid mb-2" alt="Latte">
-                        <p>Latte</p>
-                        <p class="text-muted">EGP 30</p>
-                    </div>
-                    <div class="col text-center drink-card" onclick="addDrinkToOrder('Hot Chocolate', 25)">
-                        <img src="../../../Images/Hot%20Chocolate.jpeg" class="img-fluid mb-2" alt="Hot Chocolate">
-                        <p>Hot Chocolate</p>
-                        <p class="text-muted">EGP 25</p>
-                    </div>
-                    <div class="col text-center drink-card" onclick="addDrinkToOrder('Green Tea', 12)">
-                        <img src="../../../Images/green-tea.png" class="img-fluid mb-2" alt="Green Tea">
-                        <p>Green Tea</p>
-                        <p class="text-muted">EGP 12</p>
-                    </div>
-                    <div class="col text-center drink-card" onclick="addDrinkToOrder('Iced Coffee', 18)">
-                        <img src="../../../Images/Iced%20Coffeejpeg.jpeg" class="img-fluid mb-2" alt="Iced Coffee">
-                        <p>Iced Coffee</p>
-                        <p class="text-muted">EGP 18</p>
-                    </div>
+<!--                    // customize addDrinkToOrder function to Take One Additional Argument where refere to product ID-->
+                    <?php foreach ($products as $product): ?>
+                        <div class="col text-center drink-card" onclick="addDrinkToOrder('<?=$product['name']?>', <?= $product['price']?>,<?= $product['id']?>)">
+                            <img src="/Images/<?=$product['image_url']?>" class="img-fluid mb-2" alt="Tea">
+                            <p><?=$product['name']?></p>
+                            <p class="text-muted">EGP <?= $product['price']?></p>
+                        </div>
+                   <?php endforeach; ?>
+
                 </div>
             </div>
 
@@ -88,16 +91,20 @@
                             <label for="room-select" class="form-label">Room</label>
                             <select class="form-select" id="room-select">
                                 <option value="">Select Room</option>
-                                <option value="101">Room 101</option>
-                                <option value="102">Room 102</option>
-                                <option value="103">Room 103</option>
+                                <?php foreach ($rooms as $room): ?>
+                                    <option value="<?= $room['id']?>"><?=$room['name'] ?></option>
+                                <?php endforeach; ?>
+
                             </select>
                         </div>
                         <div class="mb-3">
                             <label for="order-total" class="form-label">Total Price</label>
                             <input type="text" class="form-control" id="order-total" value="EGP 0" readonly>
                         </div>
-                        <button class="btn btn-success w-100">Confirm Order</button>
+                        <div id="warning"></div>
+<!--                        <form method="post" action="/controllers/user/catalog/create.php">-->
+                        <button class="btn btn-success w-100" onclick="PlaceOrder()">Confirm Order</button>
+<!--                        </form>-->
                     </div>
                 </div>
             </div>
@@ -105,12 +112,28 @@
 
         <!-- Latest Order -->
         <div class="mt-4">
-            <h4>Latest Order</h4>
-            <div class="card">
-                <div class="card-body">
-                    <p>No recent orders yet.</p>
-                </div>
-            </div>
+            <h4>Latest Orders</h4>
+            <?php if (!empty($latestOrder)): ?>
+                <?php foreach ($latestOrder as $order): ?>
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title">Order Date: <?= htmlspecialchars($order['created_at']) ?></h5>
+                            <p>User: <?= htmlspecialchars($order['user_name']) ?></p>
+                            <p>Room: <?= htmlspecialchars($order['room_name']) ?></p>
+                            <p>Status: <span class="<?= $order['status'] == 'processing' ? 'status-processing' : 'status-delivered' ?>"><?= ucfirst($order['status']) ?></span></p>
+                            <h6>Items:</h6>
+                            <ul>
+                                <?php foreach ($orderItems[$order['order_id']] as $item): ?>
+                                    <li><?= htmlspecialchars($item['name']) ?> - <?= htmlspecialchars($item['quantity']) ?> x EGP <?= htmlspecialchars($item['price']) ?></li>
+                                <?php endforeach; ?>
+                            </ul>
+                            <p><strong>Total: EGP <?= htmlspecialchars($order['total_price']) ?></strong></p>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+            <?php else: ?>
+                <p>No recent orders yet.</p>
+            <?php endif; ?>
         </div>
     </div>
 
