@@ -21,5 +21,5 @@ $router->get('/admin/checks', 'admin/checks/index.php');
 
 // screen-2 route
 $router->post('/user/catalog/', "/user/catalog/create.php");
-
-
+// screen-8 route
+$router->post('/admin/products/create', '/admin/product/create.php');
