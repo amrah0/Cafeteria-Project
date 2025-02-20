@@ -45,6 +45,9 @@ function addDrinkToOrder(drinkName, price, id) {
 
 // Create PlaceOrder() function to place order & send order data to PHP controller
 function PlaceOrder() {
+    // getting the user id from hidden input
+    const userId = document.getElementById('user-id').value;
+
     // Checking if cart is empty, print warning message
     if (orders.length === 0) {
         // Getting a div by ID, a bootstrap class to inform the user to fill the cart
