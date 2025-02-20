@@ -2,7 +2,6 @@
 <?php
 session_start();
 require_once __DIR__ . '/../../../vendor/autoload.php';
-
 use core\Database;
 $db = new Database();
 $userId = $_SESSION['user_id'];
