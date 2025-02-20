@@ -4,6 +4,8 @@ require_once __DIR__ . '/../../../vendor/autoload.php';
 
 use core\Database;
 $db = new Database();
+$userId = $_SESSION['user_id'];
+//var_dump($userId);
 $products = $db->select('product');
 $rooms = $db->select('room');
 $query = "
