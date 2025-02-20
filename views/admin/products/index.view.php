@@ -39,8 +39,8 @@ $products = $db->select('product');
 
 
         <div class="d-flex">
-          <a href="" class="btn btn-outline-success me-2"><i class="fa-solid fa-house"></i> Home</a>
-          <a href="/views/admin/products/index.view.php" class="btn btn-outline-success me-2  "><i class="fa-solid fa-store "></i> Products</a>
+        <a href="/admin/catalog" class="btn btn-outline-success me-2"><i class="fa-solid fa-house"></i> Home</a>
+        <a href="/views/admin/products/index.view.php" class="btn btn-outline-success me-2  "><i class="fa-solid fa-store "></i> Products</a>
           <a href="" class="btn btn-outline-success me-2 "><i class="fa-solid fa-user"></i> Users</a>
           <a href="" class="btn btn-outline-success me-2"><i class="fa-solid fa-cart-shopping"></i> Manual Order</a>
           <a href="/admin/checks" class="btn btn-outline-success"> <i class="fa-solid fa-money-check-dollar"></i> Checks</a>
@@ -65,7 +65,7 @@ $products = $db->select('product');
 
     <div class="row m-2">
       <div class="col">
-        <h1 class="text-body-primary">All Product</h1>
+        <h1 class="">All Product</h1>
 
       </div>
       <div class="col text-end">
