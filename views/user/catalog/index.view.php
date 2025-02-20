@@ -113,12 +113,28 @@ foreach ($latestOrder as $order) {
 
         <!-- Latest Order -->
         <div class="mt-4">
-            <h4>Latest Order</h4>
-            <div class="card">
-                <div class="card-body">
-                    <p>No recent orders yet.</p>
-                </div>
-            </div>
+            <h4>Latest Orders</h4>
+            <?php if (!empty($latestOrder)): ?>
+                <?php foreach ($latestOrder as $order): ?>
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title">Order Date: <?= htmlspecialchars($order['created_at']) ?></h5>
+                            <p>User: <?= htmlspecialchars($order['user_name']) ?></p>
+                            <p>Room: <?= htmlspecialchars($order['room_name']) ?></p>
+                            <p>Status: <span class="<?= $order['status'] == 'processing' ? 'status-processing' : 'status-delivered' ?>"><?= ucfirst($order['status']) ?></span></p>
+                            <h6>Items:</h6>
+                            <ul>
+                                <?php foreach ($orderItems[$order['order_id']] as $item): ?>
+                                    <li><?= htmlspecialchars($item['name']) ?> - <?= htmlspecialchars($item['quantity']) ?> x EGP <?= htmlspecialchars($item['price']) ?></li>
+                                <?php endforeach; ?>
+                            </ul>
+                            <p><strong>Total: EGP <?= htmlspecialchars($order['total_price']) ?></strong></p>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+            <?php else: ?>
+                <p>No recent orders yet.</p>
+            <?php endif; ?>
         </div>
     </div>
 
