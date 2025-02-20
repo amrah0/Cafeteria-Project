@@ -1,4 +1,12 @@
 <!--Screen 8-->
+<?php
+require_once __DIR__ . '/../../../vendor/autoload.php';
+
+use core\Database;
+$db = new Database();
+$categories = $db->select('category');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,19 +22,32 @@
 </head>
 <body>
 
+
     <div class="container mt-5">
-       
+        <?php if (isset($_GET['success'])): ?>
+            <div class="alert alert-success" role="alert">
+                Product inserted successfully
+            </div>
+        <?php elseif (isset($_GET['error'])): ?>
+            <p style="color: red;">
+                <?php
+                if ($_GET['error'] == 'missing') {
+                    echo "Please fill in all fields.";
+                }
+                ?>
+            </p>
+        <?php endif; ?>
         <div style="text-align: center;">
             <i class="bi bi-cup-hot-fill display-1 text-primary me-3" id="cup"></i>
             <h2 class="mb-3" style="text-align: center;">Add New Product</h2>
         </div>
 
 
-        <form class=" p-4 shadow rounded" id="productForm">
+        <form class=" p-4 shadow rounded" id="productForm" method="post" action="/controllers/admin/product/create.php" enctype="multipart/form-data">
 
             <div class="mb-3">
                 <label class="form-label fw-bold">Product Name</label>
-                <input type="text" class="form-control" name="product-name" placeholder="Enter product name"style="color: #000;">
+                <input type="text" class="form-control" name="product-name" placeholder="Enter product name" style="color: #000;">
                 <span class="error-message text-danger"></span>
 
             </div>
@@ -42,15 +63,13 @@
             <div class="mb-3">
                 <label class="form-label fw-bold">Category</label>
                 <div class="d-flex">
-                        <select class="form-select me-2" id="categorySelect" name="category">
-                        
-                            
-                            <option value="">Select Category</option>                        
-                        <option value="hot-drinks">Hot Drinks</option>
-                        <option value="cold-drinks">Cold Drinks</option>
-                        <option value="snacks">Snacks</option>
+                        <select class="form-select me-2"  name="category">
+
+                            <?php foreach ($categories as $category): ?>
+                                <option value="<?= $category['id'] ?>"><?= $category['name'] ?></option>
+                            <?php endforeach; ?>
                     </select>
-                    <a href="/views/admin/categories/create.view.php" class="btn btn-outline-primary">+ Add Category</a>
+                    <a href="/Cafeteria-Project/views/admin/categories/create.view.php" class="btn btn-outline-primary">+ Add Category</a>
                     <span class="error-message text-danger"></span>
 
                 </div>
@@ -74,7 +93,7 @@
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="/scripts/category.js"></script> 
+    <script src="/scripts/category.js"></script>
     <script src="/scripts/validation.js"></script>
 
 

@@ -1,7 +1,9 @@
 <?php
 
-namespace core;
-use PDO;
+namespace Core;
+
+use Exception;
+use pdo;
 use PDOException;
 class Database
 {
@@ -25,6 +27,7 @@ class Database
             echo $e->getMessage();
         }
     }
+
 
     public function insert($table, $data)
     {
@@ -128,4 +131,19 @@ class Database
         }
     }
 
+    public function lastinsertid()
+    {
+        try {
+            return $this->pdo->lastInsertId();
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+            return false;
+        }
+    }
+
+public function fetchAll($query, $params = []) {
+    $stmt = $this->pdo->prepare($query);
+    $stmt->execute($params);
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
 }

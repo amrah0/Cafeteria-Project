@@ -2,6 +2,7 @@
 ITI | Cafeteria Project
 
 
+
 #### Database Schema:
 + Create a new database user for the project:
 ```sql

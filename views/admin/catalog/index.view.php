@@ -17,6 +17,14 @@ if (isset($_GET["old"])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Drink Order Page</title>
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+    crossorigin="anonymous" />
+    <script
+    src="https://kit.fontawesome.com/ff0d0c2aec.js"
+    crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="../../../styles/admin_style.css" rel="stylesheet">
 
@@ -24,23 +32,41 @@ if (isset($_GET["old"])) {
 <body>
 <!--TODO: Find a way to send the products data to the required controller to save in the db.-->
 <!-- decide on what should be submitted-->
-    <div class="container mt-3">
-        <!-- Top Navigation Bar -->
-        <div class="d-flex justify-content-between align-items-center mb-4">
-            <div>
-                <button class="btn btn-outline-secondary me-2">Home</button>
-                <button class="btn btn-outline-secondary">Orders</button>
-            </div>
-            <div>
-                
-            </div>
+<div class="container">
+    <nav class="navbar bg-body-tertiary">
+      <div class="container-fluid">
+
+
+        <div class="d-flex">
+          <a href="/admin/catalog" class="btn btn-outline-success me-2"><i class="fa-solid fa-house"></i> Home</a>
+          <a href="/views/admin/products/index.view.php" class="btn btn-outline-success me-2  "><i class="fa-solid fa-store "></i> Products</a>
+          <a href="" class="btn btn-outline-success me-2 "><i class="fa-solid fa-user"></i> Users</a>
+          <a href="" class="btn btn-outline-success me-2"><i class="fa-solid fa-cart-shopping"></i> Manual Order</a>
+          <a href="/admin/checks" class="btn btn-outline-success"> <i class="fa-solid fa-money-check-dollar"></i> Checks</a>
+        
         </div>
+
+        <div class="dropdown ms-auto">
+          <a
+            href=""
+            class="btn btn-secondary dropdown-toggle"
+            data-bs-toggle="dropdown"
+            aria-expanded="false">
+            <i class="fa-solid fa-user-tie"></i>Admin
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li><a class="dropdown-item" href="#">Change Password</a></li>
+            <li><a class="dropdown-item" href="#">LogOut</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
         <!-- User Selection Dropdown -->
 
         <form  method="POST">
             <div class="mb-3">
-                <label for="user-select" class="form-label">Select User</label>
+                <label for="user-select" class="form-label m-2">Select User</label>
                 <select class="form-select" id="user-select" name="user">
                     <option selected value="">Choose User</option>
                     <?php foreach ($users as $user) : ?>
@@ -70,7 +96,7 @@ if (isset($_GET["old"])) {
 
             <!-- Order Summary -->
             <div class="col-md-4">
-                <div class="card">
+                <div class="card" id ="your-order">
                     <div class="card-body">
                         <h5 class="card-title">Your Order</h5>
                         <ul id="order-list" class="list-group mb-3">
