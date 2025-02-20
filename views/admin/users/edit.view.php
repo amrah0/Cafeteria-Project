@@ -1,0 +1,129 @@
+<?php
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+    crossorigin="anonymous" />
+    <script
+    src="https://kit.fontawesome.com/ff0d0c2aec.js"
+    crossorigin="anonymous"></script>
+
+
+</head>
+<body>
+
+<div class="container">
+    <?php if (isset($_GET['success'])): ?>
+        <div class="alert alert-success" role="alert">
+            Product inserted successfully
+        </div>
+    <?php elseif (isset($_GET['error'])): ?>
+        <p style="color: red;">
+            <?php
+            if ($_GET['error'] == 'missing') {
+                echo "Please fill in all fields.";
+            }
+            ?>
+        </p>
+    <?php endif; ?>
+    <div class="container">
+    <nav class="navbar bg-body-tertiary">
+      <div class="container-fluid">
+
+
+        <div class="d-flex">
+        <a href="/admin/catalog" class="btn btn-outline-success me-2"><i class="fa-solid fa-house"></i> Home</a>
+        <a href="/views/admin/products/index.view.php" class="btn btn-outline-success me-2  "><i class="fa-solid fa-store "></i> Products</a>
+          <a href="/views/admin/users/index.view.php" class="btn btn-outline-success me-2 "><i class="fa-solid fa-user"></i> Users</a>
+          <a href="/views/admin/orders/index.view.php" class="btn btn-outline-success me-2"><i class="fa-solid fa-cart-shopping"></i> Manual Order</a>
+          <a href="/admin/checks" class="btn btn-outline-success"> <i class="fa-solid fa-money-check-dollar"></i> Checks</a>
+
+        </div>
+
+        <div class="dropdown ms-auto">
+          <a
+            href=""
+            class="btn btn-secondary dropdown-toggle"
+            data-bs-toggle="dropdown"
+            aria-expanded="false">
+            <i class="fa-solid fa-user-tie"></i>Admin
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li><a class="dropdown-item" href="#">Change Password</a></li>
+            <li><a class="dropdown-item" href="#">LogOut</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <h1>Edit User: <?=$old_data['name']?>  </h1>
+    <form method="POST" action="/admin/users/edit" enctype="multipart/form-data">
+        <input type="hidden" name="id" value="<?=$old_data['id']?>">
+        <div class="form-group">
+            <label for="exampleInputEmail1">Name</label>
+            <input value="<?php echo $old_data['name'] ?? ''; ?>" name="name" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Your Name">
+            <p class="text-danger"> <?php echo $errors['name']?? "" ?> </p>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input value="<?php echo $old_data['email'] ?? ''; ?>" name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+            <p class="text-danger"> <?php echo $errors['email']?? "" ?> </p>
+
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input  name="pass" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            <p class="text-danger"> <?php echo $errors['pass']?? "" ?> </p>
+
+        </div><div class="form-group">
+            <label for="exampleInputPassword1">Confirm Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Confirm Password">
+            <p class="text-danger"> <?php echo $errors['pass']?? "" ?> </p>
+        </div>
+
+        <div class="form-group">
+            <label for="exampleInputEmail1">Role</label>
+            <select  name="role" required>
+                    <option value="admin">admin</option>
+                    <option value="user">user</option>
+            </select><br><br>
+            <p class="text-danger"> <?php echo $errors['room_n']?? "" ?> </p>
+
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Room No</label>
+            <select  name="room_n" required>
+                <?php foreach ($rooms as $room):?>
+                 <option value="<?= $room['id']?>"><?=$room['name'] ?></option>
+                <?php  endforeach; ?>
+            </select><br><br>
+            <p class="text-danger"> <?php echo $errors['room_n']?? "" ?> </p>
+
+        </div>
+
+        <div class="custom-file">
+            <label>Profile Picture</label>
+            <input name="image" type="file" class="custom-file-input" id="validatedCustomFile" >
+            <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
+            <div class="invalid-feedback">Example invalid custom file feedback</div>
+            <p class="text-danger"> <?php echo $errors['image']?? "" ?> </p>
+
+        </div>
+        <button type="submit" class="btn btn-primary">Save</button>
+        <button type="reset" class="btn btn-primary">Reset</button>
+    </form>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+</body>
+</html>
