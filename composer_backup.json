@@ -1,0 +1,9 @@
+{
+    "name": "ahella/screen_8_ui",
+    "autoload": {
+        "psr-4": {
+            "Ahella\\Screen8Ui\\": "src/"
+        }
+    },
+    "require": {}
+}

@@ -1,93 +1,102 @@
 <!--Screen 3-->
+<?php
+
+if (isset($_GET["errors"])) {
+    $errors = json_decode($_GET['errors'], true);
+    extract($errors);
+}
+//dd($errors);
+if (isset($_GET["old"])) {
+    $old_data = json_decode($_GET["old"], true);
+    extract($old_data, EXTR_PREFIX_ALL, 'old');
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Drink Order Page</title>
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+    crossorigin="anonymous" />
+    <script
+    src="https://kit.fontawesome.com/ff0d0c2aec.js"
+    crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="../../../styles/admin_style.css" rel="stylesheet">
 
 </head>
 <body>
+<!--TODO: Find a way to send the products data to the required controller to save in the db.-->
+<!-- decide on what should be submitted-->
+<div class="container">
+    <nav class="navbar bg-body-tertiary">
+      <div class="container-fluid">
 
-    
-    <div class="container mt-3">
-        <!-- Top Navigation Bar -->
-        <div class="d-flex justify-content-between align-items-center mb-4">
-            <div>
-                <button class="btn btn-outline-secondary me-2">Home</button>
-                <button class="btn btn-outline-secondary">Orders</button>
-            </div>
-            <div>
-                
-            </div>
+
+        <div class="d-flex">
+          <a href="/admin/catalog" class="btn btn-outline-success me-2"><i class="fa-solid fa-house"></i> Home</a>
+          <a href="/views/admin/products/index.view.php" class="btn btn-outline-success me-2  "><i class="fa-solid fa-store "></i> Products</a>
+          <a href="" class="btn btn-outline-success me-2 "><i class="fa-solid fa-user"></i> Users</a>
+          <a href="" class="btn btn-outline-success me-2"><i class="fa-solid fa-cart-shopping"></i> Manual Order</a>
+          <a href="/admin/checks" class="btn btn-outline-success"> <i class="fa-solid fa-money-check-dollar"></i> Checks</a>
+        
         </div>
+
+        <div class="dropdown ms-auto">
+          <a
+            href=""
+            class="btn btn-secondary dropdown-toggle"
+            data-bs-toggle="dropdown"
+            aria-expanded="false">
+            <i class="fa-solid fa-user-tie"></i>Admin
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li><a class="dropdown-item" href="#">Change Password</a></li>
+            <li><a class="dropdown-item" href="#">LogOut</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
         <!-- User Selection Dropdown -->
-        <div class="mb-3">
-            <label for="user-select" class="form-label">Select User</label>
-            <select class="form-select" id="user-select">
-                <option value="">Choose User</option>
-                <option value="user1">User 1</option>
-                <option value="user2">User 2</option>
-                <option value="user3">User 3</option>
-            </select>
-        </div>
 
-        <!-- Search Bar -->
-        <input type="text" class="form-control" id="search-bar" placeholder="Search for a drink...">
+        <form  method="POST">
+            <div class="mb-3">
+                <label for="user-select" class="form-label m-2">Select User</label>
+                <select class="form-select" id="user-select" name="user">
+                    <option selected value="">Choose User</option>
+                    <?php foreach ($users as $user) : ?>
+                        <option value="<?=$user['id']?>" name="user"><?=$user['name']?></option>
+                    <?php endforeach?>
+                </select>
+                <p class="text-danger"><?= $errors['user'] ?? '' ?></p>
+            </div>
 
-        <div class="row">
-            <!-- Drink Options -->
-            <div class="col-md-8">
-                <div class="row row-cols-4 g-3">
-                    <div class="col text-center drink-card" onclick="addDrinkToOrder('Tea', 10)">
-                        <img src="../../../Images/tea.png" class="img-fluid mb-2" alt="Tea">
-                        <p>Tea</p>
-                        <p class="text-muted">EGP 10</p>
-                    </div>
-                    <div class="col text-center drink-card" onclick="addDrinkToOrder('Coffee', 15)">
-                        <img src="../../../Images/coffeee.jpeg" class="img-fluid mb-2" alt="Coffee">
-                        <p>Coffee</p>
-                        <p class="text-muted">EGP 15</p>
-                    </div>
-                    <div class="col text-center drink-card" onclick="addDrinkToOrder('Espresso', 20)">
-                        <img src="../../../Images/espresso.jpg" class="img-fluid mb-2" alt="Espresso">
-                        <p>Espresso</p>
-                        <p class="text-muted">EGP 20</p>
-                    </div>
-                    <div class="col text-center drink-card" onclick="addDrinkToOrder('Cappuccino', 25)">
-                        <img src="../../../Images/cappuccino.png" class="img-fluid mb-2" alt="Cappuccino">
-                        <p>Cappuccino</p>
-                        <p class="text-muted">EGP 25</p>
-                    </div>
-                    <div class="col text-center drink-card" onclick="addDrinkToOrder('Latte', 30)">
-                        <img src="../../../Images/latte.jpg" class="img-fluid mb-2" alt="Latte">
-                        <p>Latte</p>
-                        <p class="text-muted">EGP 30</p>
-                    </div>
-                    <div class="col text-center drink-card" onclick="addDrinkToOrder('Hot Chocolate', 25)">
-                        <img src="../../../Images/Hot%20Chocolate.jpeg" class="img-fluid mb-2" alt="Hot Chocolate">
-                        <p>Hot Chocolate</p>
-                        <p class="text-muted">EGP 25</p>
-                    </div>
-                    <div class="col text-center drink-card" onclick="addDrinkToOrder('Green Tea', 12)">
-                        <img src="../Images/green-tea.png" class="img-fluid mb-2" alt="Green Tea">
-                        <p>Green Tea</p>
-                        <p class="text-muted">EGP 12</p>
-                    </div>
-                    <div class="col text-center drink-card" onclick="addDrinkToOrder('Iced Coffee', 18)">
-                        <img src="../../../Images/Iced%20Coffeejpeg.jpeg" class="img-fluid mb-2" alt="Iced Coffee">
-                        <p>Iced Coffee</p>
-                        <p class="text-muted">EGP 18</p>
+            <!-- Search Bar -->
+            <input type="text" class="form-control" id="search-bar" placeholder="Search for a drink...">
+
+            <div class="row">
+                <!-- Drink Options -->
+                <div class="col-md-8">
+                    <div class="row row-cols-4 g-3">
+                        <?php foreach ($products as $product) : ?>
+                            <div class="col text-center drink-card" onclick="addDrinkToOrder('<?=$product["name"]?>', <?=$product["price"]?>, '<?=$product["id"]?>')">
+                                <img src="../../../Images/<?=$product['image_url']?>" class="img-fluid mb-2" alt="Tea">
+                                <p><?=$product['name']?></p>
+                                <p class="text-muted"><?=$product['price']?></p>
+                            </div>
+                        <?php endforeach;?>
                     </div>
                 </div>
             </div>
 
             <!-- Order Summary -->
             <div class="col-md-4">
-                <div class="card">
+                <div class="card" id ="your-order">
                     <div class="card-body">
                         <h5 class="card-title">Your Order</h5>
                         <ul id="order-list" class="list-group mb-3">
@@ -95,26 +104,28 @@
                         </ul>
                         <div class="mb-3">
                             <label for="order-notes" class="form-label">Notes</label>
-                            <textarea class="form-control" id="order-notes" rows="2" placeholder="Add any special instructions..."></textarea>
+                            <textarea name="note" class="form-control" id="order-notes" rows="2" placeholder="Add any special instructions..."></textarea>
                         </div>
                         <div class="mb-3">
                             <label for="room-select" class="form-label">Room</label>
-                            <select class="form-select" id="room-select">
-                                <option value="">Select Room</option>
-                                <option value="101">Room 101</option>
-                                <option value="102">Room 102</option>
-                                <option value="103">Room 103</option>
+                            <select name="room" class="form-select" id="room-select">
+                                <option selected value="">Select Room</option>
+                                <?php foreach ($rooms as $room) : ?>
+                                    <option value="<?=$room['id']?>"><?=$room['name']?></option>
+                                <?php endforeach;?>
                             </select>
+                            <p class="text-danger"><?= $errors['room'] ?? ''?></p>
                         </div>
                         <div class="mb-3">
                             <label for="order-total" class="form-label">Total Price</label>
-                            <input type="text" class="form-control" id="order-total" value="EGP 0" readonly>
+                            <input type="text" name="total" class="form-control" id="order-total" value="EGP 0" readonly>
                         </div>
-                        <button class="btn btn-success w-100">Confirm Order</button>
+                        <input type="submit" class="btn btn-success w-100" id="submit-order">Confirm Order</input>
                     </div>
                 </div>
             </div>
-        </div>
+    </div>
+        </form>
 
         <!-- Latest Order -->
         <div class="mt-4">

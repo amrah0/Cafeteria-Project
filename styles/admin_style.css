@@ -1,9 +1,3 @@
-.drink-card img {
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
-  cursor: pointer;
-}
 
 #search-bar {
   width: 100%;
@@ -11,10 +5,138 @@
   margin-bottom: 20px;
 }
 
+
+
+.drink-card:hover {
+  transform: scale(1.05);
+}
+
+
+
+.form-label {
+  font-size: 26px;
+  color: #333;
+}
+
+.form-select,
+.form-control {
+  border-radius: 8px;
+  padding: 10px;
+}
+
+
+
 .drink-card {
-  transition: transform 0.2s ease-in-out;
+  cursor: pointer;
+  width: 200px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: white;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.drink-card:not(:last-child) {
+  margin-right: 25px;
 }
 
 .drink-card:hover {
   transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.drink-card img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.drink-card p {
+  margin: 5px 0;
+  font-weight: bold;
+}
+
+.card {
+    width: 400px;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 900px;
+    right: 210px;
+  
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+}
+
+h4 {
+    width: 350px;
+     margin-bottom:  5px; 
+    position: absolute;
+    top: 850px;
+    right: 250px;
+  
+
+  padding: 15px;
+}
+
+
+
+
+#submit-order:hover {
+  background-color: #157347;
+}
+
+.latest-order .card-body p {
+  width: 50px;
+  color: #6c757d;
+  font-style: italic;
+}
+
+@media (max-width: 1024px) {
+  .drink-container {
+      justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .drink-card {
+      width: 150px;
+  }
+
+  .order-form {
+      width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .drink-container {
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .drink-card {
+      width: 100%;
+  }
+}
+
+
+#your-order{
+  width: 350px;
+  padding: 15px;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 250px;
+  right: 250px;
 }

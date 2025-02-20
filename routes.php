@@ -15,5 +15,11 @@ $router->post('/admin/products/delete', 'admin/products/delete.php');
 
 // checks Routes
 $router->get('/admin/checks', 'admin/checks/index.php');
+
+
+
+
 // screen-2 route
 $router->post('/user/catalog/', "/user/catalog/create.php");
+
+
