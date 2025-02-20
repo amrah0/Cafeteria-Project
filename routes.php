@@ -1,10 +1,11 @@
 <?php
-
+use core\Router;
 // Screen 1
 $router->get('/login', '/user/login/index.php');
 $router->post('/login', '/user/login/store.php');
 
 // Screen-2 route
+$router->get('/', "/user/catalog/index.php");
 $router->post('/user/catalog/', "/user/catalog/create.php");
 
 // Screen 3
@@ -15,6 +16,7 @@ $router->post('/admin/catalog', '/admin/catalog/store.php');
 $router->post('/admin/products/create', '/admin/product/create.php');
 
 // Screen 7 route
+$router->get('/admin/users/create', '/admin/users/index.php');
 $router->post('/admin/users/create', '/admin/users/create.php');
 
 $router->post('/admin/catalog', '/admin/catalog/store.php');
