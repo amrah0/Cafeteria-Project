@@ -1,11 +1,7 @@
 <?php
 
-
-require_once BASE_PATH . '/core/database.php';
-
-use Core\Database;
-
+use core\Database;
 $db = new Database();
-$products = $db->select('product');
+$products = $db->select('Product');
 
-require BASE_PATH . '/views/admin/products/index.view.php';
+require view('admin/products/index.view.php',['products'=>$products]);

@@ -37,6 +37,7 @@ if (isset($_GET['old'])) {
   <link rel="stylesheet" href="../../../styles/products.css">
 </head>
 <body>
+
   <div class="container">
     <h1 class="my-4">Edit Product</h1>
     <form action="/admin/products/update" method="POST" enctype="multipart/form-data">

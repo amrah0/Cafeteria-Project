@@ -1,17 +1,17 @@
 <!--Screen 5-->
 <?php
 
-use Core\Database;
-
-if (!defined('BASE_PATH')) {
-  define('BASE_PATH', dirname(dirname(dirname(__DIR__))));
-}
-
-require_once BASE_PATH . '/core/database.php';
-
-
-$db = new Database();
-$products = $db->select('product');
+//use core\Database;
+//
+//if (!defined('BASE_PATH')) {
+//  define('BASE_PATH', dirname(dirname(dirname(__DIR__))));
+//}
+//
+//require_once BASE_PATH . '/core/Database.php';
+//
+//
+//$db = new Database();
+//$products = $db->select('Product');
 ?>
 
 <!DOCTYPE html>
@@ -34,36 +34,10 @@ $products = $db->select('product');
 
 <body>
   <div class="container">
-    <nav class="navbar bg-body-tertiary">
-      <div class="container-fluid">
 
+      <?php require base_path('/views/partials/nav.php')?>
 
-        <div class="d-flex">
-        <a href="/admin/catalog" class="btn btn-outline-success me-2"><i class="fa-solid fa-house"></i> Home</a>
-        <a href="/views/admin/products/index.view.php" class="btn btn-outline-success me-2  "><i class="fa-solid fa-store "></i> Products</a>
-          <a href="/views/admin/users/index.view.php" class="btn btn-outline-success me-2 "><i class="fa-solid fa-user"></i> Users</a>
-          <a href="/views/admin/orders/index.view.php" class="btn btn-outline-success me-2"><i class="fa-solid fa-cart-shopping"></i> Manual Order</a>
-          <a href="/admin/checks" class="btn btn-outline-success"> <i class="fa-solid fa-money-check-dollar"></i> Checks</a>
-        
-        </div>
-
-        <div class="dropdown ms-auto">
-          <a
-            href=""
-            class="btn btn-secondary dropdown-toggle"
-            data-bs-toggle="dropdown"
-            aria-expanded="false">
-            <i class="fa-solid fa-user-tie"></i>Admin
-          </a>
-          <ul class="dropdown-menu dropdown-menu-end">
-            <li><a class="dropdown-item" href="#">Change Password</a></li>
-            <li><a class="dropdown-item" href="#">LogOut</a></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-
-    <div class="row m-2">
+      <div class="row m-2">
       <div class="col">
         <h1 class="">All Product</h1>
 
