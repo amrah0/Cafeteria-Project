@@ -56,6 +56,7 @@ function PlaceOrder() {
         warning.textContent = 'Cart cannot be empty. Please enter a valid order.';
     } else {
         let data = {
+            user_id: userId,
             orders: orders,
             total_price: totalPrice,
             room_id: document.getElementById('room-select').value,
