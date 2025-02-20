@@ -131,4 +131,19 @@ class Database
         }
     }
 
+    public function lastinsertid()
+    {
+        try {
+            return $this->pdo->lastInsertId();
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+            return false;
+        }
+    }
+
+public function fetchAll($query, $params = []) {
+    $stmt = $this->pdo->prepare($query);
+    $stmt->execute($params);
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
 }
