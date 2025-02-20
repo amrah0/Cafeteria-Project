@@ -82,13 +82,18 @@
                     <td>
                         <?=$user['room']?>
                     </td>
-                    <td><img src="../../../Images/<?=$user['image_url']?>" alt=""></td>
+                    <td><img width="150px" src="../../../Images/<?=$user['image_url']?>" alt=""></td>
 <!--                    <td>555</td>-->
                     <td>
-                        <a href="" class="btn btn-primary">Edit</a>
-                        <button  class="btn btn-primary">
-                            delete
-                        </button>
+                        <div class="container">
+                            <div class="row row-cols-3">
+                                <a href="/admin/users/edit?id=<?=$user['id']?>" class="btn btn-primary">Edit</a>
+                                <form method="POST" action="/admin/users/delete">
+                                    <input type="hidden" name="id" value="<?=$user['id']?>">
+                                    <input type="submit" value="Delete" class="btn btn-primary">
+                                </form>
+                            </div>
+                        </div>
                     </td>
                 </tr>
             <?php endforeach?>
