@@ -41,6 +41,10 @@ foreach ($latestOrder as $order) {
 
 </head>
 <body>
+<!--    //   hidden input to store user id from session-->
+    <input type="hidden" id="user-id" value="<?php echo $_SESSION['user_id']; ?>">
+
+
     <div class="container mt-3">
         <!-- Top Navigation Bar -->
         <div class="d-flex justify-content-between align-items-center mb-4">
