@@ -34,14 +34,14 @@ if (Validator::string($name) && validator::email($email) && $room ) {
         'role' => $role
     ];
     $db = new Database();
-    $insert = $db->insert('user', $data);
+    $insert = $db->insert('User', $data);
 
     if ($insert) {
 
-        header("Location: /Cafeteria-Project/views/admin/users/create.view.php?success=true");
+        header("Location: /admin/users/create?success=true");
         exit;
     }else{
-        redirect('/Cafeteria-Project/views/admin/users/create.view.php?error=1');
+        redirect('/admin/users/create?error=1');
         exit();
     }
 
@@ -65,7 +65,7 @@ else{
 
     $errors = json_encode($errors);
 
-   $url = "/Cafeteria-Project/views/admin/users/create.view.php?error={$errors}";
+   $url = "/admin/users/create?error={$errors}";
     if(count($old)){
         $old = json_encode($old);
         $url  = "{$url}&old={$old}";

@@ -31,20 +31,20 @@ try {
             'image_url' => $imageName,
         ];
         $db = new Database();
-        $insert = $db->insert('product', $data);
+        $insert = $db->insert('Product', $data);
 
         if ($insert) {
 //            $baseUrl =  $_SERVER['HTTP_HOST'] . "/Cafeteria-Project";
-            header("Location: /Cafeteria-Project/views/admin/products/create.view.php?success=true");
+            header("Location: /admin/products/create?success=true");
             exit;
         }else{
-            redirect('/Cafeteria-Project/views/admin/products/create.view.php?error=1');
+            redirect('/admin/products/create?error=1');
             exit();
         }
 
         }
     else{
-        redirect('/Cafeteria-Project/views/admin/products/create.view.php?error=missing');
+        redirect('/admin/products/create?error=missing');
     }
 
 } catch (Exception $e) {

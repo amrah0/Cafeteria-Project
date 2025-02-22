@@ -18,6 +18,7 @@
                 data-bs-toggle="dropdown"
                 aria-expanded="false">
                 <i class="fa-solid fa-user-tie"></i>Admin
+                <?php echo $_SESSION['email'] ?>
             </a>
             <ul class="dropdown-menu dropdown-menu-end">
                 <li><a class="dropdown-item" href="#">Change Password</a></li>

@@ -1,11 +1,5 @@
 <?php
 
-require_once __DIR__ . '/../../../vendor/autoload.php';
-
-use core\Database;
-$db = new Database();
-$rooms = $db->select('room');
-//var_dump($rooms);
 if (isset($_GET['error'])){
     $errors = json_decode($_GET['error'], true);
     extract($errors);  # variable with values --> based on errors
@@ -40,7 +34,7 @@ if(isset($_GET['old'])){
 <div class="container">
     <?php if (isset($_GET['success'])): ?>
         <div class="alert alert-success" role="alert">
-            Product inserted successfully
+            User inserted successfully
         </div>
     <?php elseif (isset($_GET['error'])): ?>
         <p style="color: red;">

@@ -10,7 +10,7 @@ $id = $_POST['id'] ?? null;
 $message = "";
 
 if ($id) {
-    $product = $db->show($id, 'product');
+    $product = $db->show($id, 'Product');
     if ($product) {
         if ($product['quantity'] > 0) {
             $message = "This product is available with quantity: " . $product['quantity'] . ".";

@@ -17,10 +17,10 @@ try {
         // access Database Class And make a New Object Of It
         $db = new Database();
 
-        $insert = $db->insert('category', $data);
+        $insert = $db->insert('Category', $data);
 
         if ($insert) {
-            redirect("/Cafeteria-Project/views/admin/categories/create.view.php?success=true");
+            redirect("/admin/categories/create?success=true");
             exit;
         } else {
             $errors = ['database' => "Failed to insert category into the database."];
@@ -45,7 +45,7 @@ try {
 
         // Redirect with error and old values
         // redirect is a custom function stored in core/functions
-        redirect(" /Cafeteria-Project/views/admin/categories/create.view.php?error={$errors}&old={$old}");
+        redirect(" /admin/categories/create?error={$errors}&old={$old}");
         exit;
     }
 } catch (Exception $e) {

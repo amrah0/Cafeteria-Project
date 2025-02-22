@@ -6,8 +6,8 @@ use core\Database;
 $db = new Database();
 $userId = $_SESSION['user_id'];
 //var_dump($userId);
-$products = $db->select('product');
-$rooms = $db->select('room');
+$products = $db->select('Product');
+$rooms = $db->select('Room');
 $query = "
     SELECT `Order`.id AS order_id, `Order`.created_at, `Order`.total_price, `Order`.status, 
            User.id AS user_id, User.name AS user_name, Room.name AS room_name
@@ -59,9 +59,9 @@ foreach ($latestOrder as $order) {
 
 
         <div class="d-flex">
-        <a href="views/user/catalog/index.view.php" class="btn btn-outline-success me-2"><i class="fa-solid fa-house"></i> Home</a>
+        <a href="/" class="btn btn-outline-success me-2"><i class="fa-solid fa-house"></i> Home</a>
       
-          <a href="/views/user/orders/index.view.php" class="btn btn-outline-success me-2"><i class="fa-solid fa-cart-shopping"></i> My Orders</a>
+          <a href="/user/orders" class="btn btn-outline-success me-2"><i class="fa-solid fa-cart-shopping"></i> My Orders</a>
         
         </div>
 
@@ -72,6 +72,8 @@ foreach ($latestOrder as $order) {
             data-bs-toggle="dropdown"
             aria-expanded="false">
             <i class="fa-solid fa-user-tie"></i>user
+              <?php echo $_SESSION['email'] ?>
+
           </a>
           <ul class="dropdown-menu dropdown-menu-end">
             <li><a class="dropdown-item" href="#">Change Password</a></li>

@@ -10,7 +10,7 @@ if (!isset($_GET['id'])) {
 }
 
 
-$product = $db->show($_GET['id'], 'product');
+$product = $db->show($_GET['id'], 'Product');
 if (!$product) {
     echo "<p class='text-danger'>Product not found.</p>";
     exit;

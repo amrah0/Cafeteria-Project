@@ -9,7 +9,7 @@ $db = new Database();
 $productId = $_GET['id'] ?? null;
 
 if ($productId) {
-    $product = $db->show($productId, 'product');
+    $product = $db->show($productId, 'Product');
     if (!$product) {
         die('Product not found.');
     }

@@ -10,7 +10,7 @@ class Database
 
     const DB_USER = 'php';
     const DB_PASSWORD = 'php';
-    const DB_HOST = 'localhost';
+    const DB_HOST = '127.0.0.1';
     const DB_NAME = 'php_cafeteria_project';
     const DB_PORT = 3306;
     protected $pdo;

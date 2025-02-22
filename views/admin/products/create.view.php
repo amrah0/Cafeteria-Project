@@ -1,10 +1,6 @@
 <!--Screen 8-->
 <?php
-require_once __DIR__ . '/../../../vendor/autoload.php';
 
-use core\Database;
-$db = new Database();
-$categories = $db->select('category');
 ?>
 
 <!DOCTYPE html>
@@ -71,7 +67,7 @@ $categories = $db->select('category');
                                 <option value="<?= $category['id'] ?>"><?= $category['name'] ?></option>
                             <?php endforeach; ?>
                     </select>
-                    <a href="/Cafeteria-Project/views/admin/categories/create.view.php" class="btn btn-outline-primary">+ Add Category</a>
+                    <a href="/admin/categories/create" class="btn btn-outline-primary">+ Add Category</a>
                     <span class="error-message text-danger"></span>
 
                 </div>

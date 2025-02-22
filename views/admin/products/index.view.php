@@ -43,7 +43,7 @@
 
       </div>
       <div class="col text-end">
-        <a href="/views/admin/products/create.view.php">Add Product</a>
+        <a href="/admin/products/create">Add Product</a>
       </div>
     </div>
 
@@ -72,7 +72,7 @@
                   <td><?= htmlspecialchars($product['name']) ?></td>
                   <td><?= htmlspecialchars($product['price']) ?> EGP</td>
                   <td>
-                    <img src="/images/<?= htmlspecialchars($product['image_url']) ?>" alt="Product Image" style="width: 80px; height: 80px;">
+                    <img src="/Images/<?= htmlspecialchars($product['image_url']) ?>" alt="Product Image" style="width: 80px; height: 80px;">
                   </td>
                   <td>
                     <a href="/admin/products/edit?id=<?= $product['id'] ?>" class="btn btn-primary">Edit</a>
