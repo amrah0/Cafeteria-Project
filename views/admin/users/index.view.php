@@ -28,7 +28,7 @@
 
           </div>
           <div class="col text-end">
-              <a href="">Add User</a>
+              <a href="/admin/users/create">Add User</a>
           </div>
       </div>
 

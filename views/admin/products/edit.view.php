@@ -1,6 +1,6 @@
 <?php
 use Core\Database;
-require_once BASE_PATH . '/core/database.php';
+require_once BASE_PATH . '/core/Database.php';
 
 $db = new Database();
 
@@ -10,7 +10,7 @@ if (!isset($_GET['id'])) {
 }
 
 
-$product = $db->show($_GET['id'], 'product');
+$product = $db->show($_GET['id'], 'Product');
 if (!$product) {
     echo "<p class='text-danger'>Product not found.</p>";
     exit;

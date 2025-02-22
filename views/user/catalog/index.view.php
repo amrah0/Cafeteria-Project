@@ -4,10 +4,12 @@ session_start();
 require_once __DIR__ . '/../../../vendor/autoload.php';
 use core\Database;
 $db = new Database();
+$users = $db->select('User');
+print_r($users['role']);
 $userId = $_SESSION['user_id'];
 //var_dump($userId);
-$products = $db->select('product');
-$rooms = $db->select('room');
+$products = $db->select('Product');
+$rooms = $db->select('Room');
 $query = "
     SELECT `Order`.id AS order_id, `Order`.created_at, `Order`.total_price, `Order`.status, 
            User.id AS user_id, User.name AS user_name, Room.name AS room_name
@@ -59,9 +61,9 @@ foreach ($latestOrder as $order) {
 
 
         <div class="d-flex">
-        <a href="views/user/catalog/index.view.php" class="btn btn-outline-success me-2"><i class="fa-solid fa-house"></i> Home</a>
+        <a href="/" class="btn btn-outline-success me-2"><i class="fa-solid fa-house"></i> Home</a>
       
-          <a href="/views/user/orders/index.view.php" class="btn btn-outline-success me-2"><i class="fa-solid fa-cart-shopping"></i> My Orders</a>
+          <a href="/user/orders" class="btn btn-outline-success me-2"><i class="fa-solid fa-cart-shopping"></i> My Orders</a>
         
         </div>
 
@@ -71,11 +73,16 @@ foreach ($latestOrder as $order) {
             class="btn btn-secondary dropdown-toggle"
             data-bs-toggle="dropdown"
             aria-expanded="false">
-            <i class="fa-solid fa-user-tie"></i>user
+            <i class="fa-solid fa-user-tie"></i>
+
+              <?php
+              echo $_SESSION['user_role'];
+             ?>
+
           </a>
           <ul class="dropdown-menu dropdown-menu-end">
-            <li><a class="dropdown-item" href="#">Change Password</a></li>
-            <li><a class="dropdown-item" href="#">LogOut</a></li>
+            <li><a class="dropdown-item" href="#"> <?php  echo $_SESSION['email'] ?></a></li>
+            <li><a class="dropdown-item" href="/logout">LogOut</a></li>
           </ul>
         </div>
       </div>
@@ -138,7 +145,7 @@ foreach ($latestOrder as $order) {
         </div>
 
         <!-- Latest Order -->
-        <div class="mt-4">
+        <div class="d-flex mt-4">
             <h4>Latest Orders</h4>
             <?php if (!empty($latestOrder)): ?>
                 <?php foreach ($latestOrder as $order): ?>

@@ -1,9 +1,9 @@
 <?php
 
 
-require_once BASE_PATH . '/core/database.php';
+require_once BASE_PATH . '/core/Database.php';
 
-use Core\Database;
+use core\Database;
 
 $database = new Database();
 

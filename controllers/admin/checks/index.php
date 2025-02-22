@@ -158,7 +158,7 @@ if (!empty($selectedOrderId)) {
             $prod = $productsById[$op['product_id']];
             $products[] = [
                 'name'        => $prod['name'],
-                'image_url'   => '/images/' . $prod['image_url'],
+                'image_url'   => '/Images/' . $prod['image_url'],
                 'quantity'    => $op['quantity'],
                 'price'       => $prod['price'],
                 'total_price' => $prod['price'] * $op['quantity']

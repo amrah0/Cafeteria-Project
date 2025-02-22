@@ -30,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
 
-    $currentProduct = $db->show($id, 'product');
+    $currentProduct = $db->show($id, 'Product');
     if (!$currentProduct) {
         die("Product not found.");
     }
@@ -80,7 +80,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     ];
 
     try {
-        $result = $db->update('product', $id, $updateData);
+        $result = $db->update('Product', $id, $updateData);
         if ($result) {
             header("Location: /admin/products");
             exit();

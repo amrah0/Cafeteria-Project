@@ -12,15 +12,29 @@ function checkLogin($email, $password)
     $users = $db->select('User');
     $userExists = false;
     foreach ($users as $user) {
-        $user['email'] === $email and $user['password'] === $password ? $userExists = true : '';
+       if ($user['email'] === $email and $user['password'] === $password ? $userExists = true : ''){
+           // some small enhancements to code to benefit us in the project => amrah0
+           $loggedInUser = $user; // after user found
+           break; // Stops loop once the user is found in db
+       }
     }
 
     if ($userExists) {
-
-        $_SESSION['email'] = $email;
+        // declaring the user data once he/she logged in
+        $_SESSION['email'] = $loggedInUser['email'];
         $_SESSION['login'] = true;
+        $_SESSION['user_id'] = $loggedInUser['id'];
+        $_SESSION['user_name'] = $loggedInUser['name'];
+        $_SESSION['user_role'] = $loggedInUser['role'];
 
-        header("Location: /admin/catalog");
+        // according the user role redirct to his page rather user is admin Or user
+        if ($_SESSION['user_role'] === 'admin') {
+            header("Location: /admin/catalog");
+
+        }else{
+            header("Location: /");
+
+        }
 
     } else {
         $invalid = "Invalid Email or Password";

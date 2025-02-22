@@ -1,15 +1,15 @@
 <?php
-use Core\Database;
+use core\Database;
 
 
-require_once BASE_PATH . '/core/database.php';
+//require_once BASE_PATH . 'core/Database.php';
 
 $db = new Database();
 
 $productId = $_GET['id'] ?? null;
 
 if ($productId) {
-    $product = $db->show($productId, 'product');
+    $product = $db->show($productId, 'Product');
     if (!$product) {
         die('Product not found.');
     }

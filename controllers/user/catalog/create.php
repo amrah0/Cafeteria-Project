@@ -13,7 +13,8 @@ try {
     $totalPrice = $orderData['total_price'];
     $roomId = $orderData['room_id'];
     $notes = $orderData['notes'] ?? '';
-    $userId = $orderData['user_id'];
+    $userId = 1;
+//    $userId = $orderData['user_id'];
 
 
     // validate the inputs
@@ -36,7 +37,7 @@ try {
 
 
         // insert the order array to the db order table
-        $insertOrder = $db->insert('`order`', $order);
+        $insertOrder = $db->insert('`Order`', $order);
 
         // make sure if there is row efected then insert other data to order_product table
         if ($insertOrder) {
@@ -54,7 +55,7 @@ try {
                         'quantity' => $order['quantity']
                     ];
                     // if all things all right then insert into order_product table
-                    $insertOrderProduct = $db->insert('order_product', $orderProductData);
+                    $insertOrderProduct = $db->insert('Order_Product', $orderProductData);
                     // throw an error if there is no rows effected
                     if (!$insertOrderProduct) {
                         throw new Exception("Failed to insert order product: " . json_encode($order));

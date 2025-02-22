@@ -17,11 +17,15 @@
                 class="btn btn-secondary dropdown-toggle"
                 data-bs-toggle="dropdown"
                 aria-expanded="false">
-                <i class="fa-solid fa-user-tie"></i>Admin
+                <i class="fa-solid fa-user-tie"></i>
+                <?php
+                echo $_SESSION['user_role'];
+                ?>
+
             </a>
             <ul class="dropdown-menu dropdown-menu-end">
-                <li><a class="dropdown-item" href="#">Change Password</a></li>
-                <li><a class="dropdown-item" href="#">LogOut</a></li>
+                <li><a class="dropdown-item" href="#"> <?php echo $_SESSION['email'] ?></a></li>
+                <li><a class="dropdown-item" href="/logout">LogOut</a></li>
             </ul>
         </div>
     </div>
